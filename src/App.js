@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CoachHub from "./CoachHub";
 
@@ -92,10 +92,6 @@ function HeroPhone() {
 }
 
 function LandingPage() {
-  const [email, setEmail] = useState("");
-  const [navOpen, setNavOpen] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-
   useEffect(() => {
     if (!document.getElementById("nsp-fonts")) {
       const link = document.createElement("link");

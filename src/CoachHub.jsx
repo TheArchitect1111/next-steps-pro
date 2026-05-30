@@ -1,16 +1,5 @@
 import { useEffect, useState } from "react";
 
-const C = {
-  navy:    "#1a2744",
-  navyMid: "#1e2f52",
-  navyDk:  "#111d35",
-  gold:    "#c9a84c",
-  white:   "#ffffff",
-  cream:   "#FAFAF8",
-  muted:   "rgba(255,255,255,0.55)",
-  mutedDk: "rgba(255,255,255,0.38)",
-  border:  "rgba(255,255,255,0.1)",
-};
 
 export default function CoachHub() {
   const [email, setEmail] = useState("");
