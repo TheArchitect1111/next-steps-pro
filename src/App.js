@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import CoachHub from "./CoachHub";
 
 const C = {
   navy:   "#1a2744",
@@ -305,7 +307,7 @@ export default function App() {
     document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
   };
 
-  return (
+  const LandingPage = (
     <div>
 
       {/* ── HERO ── */}
@@ -470,5 +472,14 @@ export default function App() {
       </footer>
 
     </div>
+  );
+
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={LandingPage} />
+        <Route path="/coach" element={<CoachHub />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
