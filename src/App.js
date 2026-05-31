@@ -92,6 +92,34 @@ function HeroPhone() {
   );
 }
 
+function PlatformIcon({ name }) {
+  const common = { fill: "none", stroke: "currentColor", strokeWidth: 2, strokeLinecap: "round", strokeLinejoin: "round" };
+  if (name === "Instagram") return (
+    <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="7" y="7" width="18" height="18" rx="5" {...common}/><circle cx="16" cy="16" r="4.5" {...common}/><circle cx="22" cy="10.5" r="1.2" fill="currentColor"/></svg>
+  );
+  if (name === "YouTube") return (
+    <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="9" width="22" height="14" rx="5" fill="currentColor"/><path d="M14 12.5v7l6-3.5-6-3.5z" fill="#fff"/></svg>
+  );
+  if (name === "LinkedIn") return (
+    <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="6" y="6" width="20" height="20" rx="3" fill="currentColor"/><path d="M11 14h3v9h-3v-9zm1.5-4.5a1.7 1.7 0 110 3.4 1.7 1.7 0 010-3.4zM16 14h2.8v1.3c.5-.8 1.4-1.6 3-1.6 2.4 0 3.2 1.5 3.2 4.2V23h-3v-4.6c0-1.2-.4-2-1.5-2s-1.5.8-1.5 2V23h-3v-9z" fill="#fff"/></svg>
+  );
+  if (name === "Stripe") return (
+    <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="6" width="22" height="20" rx="5" fill="currentColor"/><path d="M19.5 13.2c-.7-.3-1.6-.6-2.7-.6-1.1 0-1.7.4-1.7 1s.7.9 2.2 1.4c2.3.8 3.5 1.9 3.5 3.8 0 2.4-1.9 4-5 4-1.4 0-2.9-.3-3.8-.8v-2.9c.9.5 2.4 1 3.8 1 1.2 0 1.9-.4 1.9-1.1 0-.6-.6-1-2.3-1.6-2.2-.8-3.4-1.8-3.4-3.7 0-2.2 1.8-3.8 4.8-3.8 1.3 0 2.4.2 3.2.6v2.7z" fill="#fff"/></svg>
+  );
+  if (name === "Calendly") return (
+    <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="11" fill="currentColor"/><path d="M21 13.2a6 6 0 10.2 5.2" fill="none" stroke="#fff" strokeWidth="2.4" strokeLinecap="round"/></svg>
+  );
+  if (name === "Website") return (
+    <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="10" {...common}/><path d="M6 16h20M16 6c3 3.2 4.2 6.5 4.2 10S19 22.8 16 26c-3-3.2-4.2-6.5-4.2-10S13 9.2 16 6z" {...common}/></svg>
+  );
+  if (name === "Facebook") return (
+    <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="11" fill="currentColor"/><path d="M18.7 12.7h2V9.5h-2.7c-3 0-4.5 1.8-4.5 4.4v2h-2.5v3.4h2.5V26h3.6v-6.7h3l.5-3.4h-3.5v-1.7c0-1 .4-1.5 1.6-1.5z" fill="#fff"/></svg>
+  );
+  return (
+    <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="6" y="6" width="20" height="20" rx="6" fill="currentColor"/><path d="M18 10v8.4a4.2 4.2 0 11-3-4v3a1.5 1.5 0 101 1.4V10h2z" fill="#fff"/><path d="M18 10c1.2 2 2.6 3.2 4.5 3.6v2.8c-1.8-.2-3.2-.9-4.5-2v-4.4z" fill="#fff"/></svg>
+  );
+}
+
 function LaunchPadDiagram() {
   const cx = 260, cy = 252;
   const ringR = 163;
@@ -163,12 +191,12 @@ function LaunchPadDiagram() {
         const { x, y } = pt(pl.deg);
         return (
           <g key={`n${i}`}>
-            <circle cx={x} cy={y} r={nodeR} fill={pl.fill} stroke="rgba(255,255,255,0.65)" strokeWidth="1.5"/>
-            <text x={x} y={y} textAnchor="middle" dominantBaseline="central"
-              fontFamily="Inter, sans-serif" fontSize="6.5" fontWeight="700"
-              fill="#ffffff" letterSpacing="0.08em">
-              {pl.name.toUpperCase()}
-            </text>
+            <circle cx={x} cy={y} r={nodeR} fill={pl.fill} stroke="rgba(255,255,255,0.82)" strokeWidth="2"/>
+            <foreignObject x={x - 18} y={y - 18} width="36" height="36">
+              <div xmlns="http://www.w3.org/1999/xhtml" style={{width:36,height:36,color:"#fff",display:"flex",alignItems:"center",justifyContent:"center"}}>
+                <PlatformIcon name={pl.name} />
+              </div>
+            </foreignObject>
             <text x={x} y={y + nodeR + 14} textAnchor="middle"
               fontFamily="Inter, sans-serif" fontSize="8" fontWeight="500"
               fill="#1a2744" letterSpacing="0.08em">
@@ -186,8 +214,9 @@ function LaunchPadDiagram() {
         fill="none" stroke="#c9a84c" strokeWidth="1.5" opacity="0.82"/>
 
       {/* Center: logo */}
+      <circle cx={cx} cy={cy} r={centerR - 10} fill="#ffffff" opacity="0.96"/>
       <image href="/nextstepspro-logo.png"
-        x={cx - 40} y={cy - 20} width="80" height="40"
+        x={cx - 43} y={cy - 22} width="86" height="44"
         clipPath="url(#lpd-logo-clip)"
         preserveAspectRatio="xMidYMid meet"/>
     </svg>
@@ -328,9 +357,18 @@ function LandingPage() {
         .nsp-nav-cta:hover { opacity: 0.85; transform: translateY(-1px); }
 
         /* ── HERO ── */
-        .nsp-hero { background: #FAFAF8; padding: 80px 24px 100px; overflow: hidden; }
+        .nsp-hero {
+          background:
+            linear-gradient(120deg, rgba(9,18,35,0.96) 0%, rgba(18,30,54,0.94) 46%, rgba(250,250,248,0.98) 46%, #FAFAF8 100%);
+          padding: 84px 24px 110px; overflow: hidden; position: relative;
+        }
+        .nsp-hero::before {
+          content: ''; position: absolute; inset: 0;
+          background: radial-gradient(circle at 18% 18%, rgba(201,168,76,0.16) 0%, transparent 34%);
+          pointer-events: none;
+        }
         .nsp-hero-inner {
-          max-width: 1100px; margin: 0 auto;
+          max-width: 1100px; margin: 0 auto; position: relative; z-index: 1;
           display: grid; grid-template-columns: 1fr 420px; gap: 60px; align-items: center;
         }
         .nsp-hero-eyebrow {
@@ -340,17 +378,35 @@ function LandingPage() {
         .nsp-hero-h1 {
           font-family: 'Playfair Display', Georgia, serif;
           font-size: clamp(2.2rem, 4.5vw, 3.6rem); font-weight: 700;
-          color: #1a2744; line-height: 1.18; margin-bottom: 16px;
+          color: #ffffff; line-height: 1.12; margin-bottom: 16px;
         }
+        .nsp-hero-h1 span { color: #c9a84c; }
         .nsp-hero-subhead {
           font-family: 'Inter', sans-serif;
           font-size: clamp(1rem, 2vw, 1.2rem); font-weight: 700;
-          color: #1a2744; line-height: 1.45; margin-bottom: 20px; max-width: 520px;
+          color: rgba(255,255,255,0.9); line-height: 1.45; margin-bottom: 18px; max-width: 520px;
         }
         .nsp-hero-explain {
           font-family: 'Inter', sans-serif; font-size: 1rem;
-          color: #6b7280; line-height: 1.78; font-weight: 300;
-          margin-bottom: 40px; max-width: 520px;
+          color: rgba(255,255,255,0.68); line-height: 1.78; font-weight: 300;
+          margin-bottom: 26px; max-width: 520px;
+        }
+        .nsp-hero-proof {
+          display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px;
+          max-width: 520px; margin: 0 0 34px;
+        }
+        .nsp-hero-proof-item {
+          border: 1px solid rgba(201,168,76,0.28);
+          background: rgba(255,255,255,0.06);
+          border-radius: 12px; padding: 14px 14px;
+        }
+        .nsp-hero-proof-kicker {
+          font-family: 'Inter', sans-serif; color: #c9a84c; font-size: 0.68rem;
+          letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; margin-bottom: 5px;
+        }
+        .nsp-hero-proof-copy {
+          font-family: 'Inter', sans-serif; color: rgba(255,255,255,0.82); font-size: 0.82rem;
+          line-height: 1.45; font-weight: 500;
         }
         .nsp-hero-btns { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
         .nsp-btn-gold {
@@ -363,17 +419,17 @@ function LandingPage() {
         .nsp-btn-gold:hover { opacity: 0.87; transform: translateY(-1px); }
         .nsp-btn-ghost {
           display: inline-flex; align-items: center; gap: 6px;
-          background: transparent; color: #6b7280; border: none;
+          background: transparent; color: rgba(255,255,255,0.72); border: none;
           padding: 15px 4px; font-family: 'Inter', sans-serif; font-size: 0.82rem;
           font-weight: 500; cursor: pointer; text-decoration: none; transition: color 0.18s;
         }
-        .nsp-btn-ghost:hover { color: #1a2744; }
+        .nsp-btn-ghost:hover { color: #ffffff; }
         .nsp-hero-phone-wrap {
           display: flex; justify-content: center; align-items: center; position: relative;
         }
         .nsp-hero-phone-glow {
           position: absolute; width: 300px; height: 300px; border-radius: 50%;
-          background: radial-gradient(circle, rgba(201,168,76,0.13) 0%, transparent 70%);
+          background: radial-gradient(circle, rgba(201,168,76,0.2) 0%, transparent 70%);
           pointer-events: none;
         }
 
@@ -404,8 +460,13 @@ function LandingPage() {
           align-items: center; margin-top: 48px;
         }
         .nsp-what2-body {
-          font-family: 'Inter', sans-serif; font-size: 1.02rem; color: #374151;
+          font-family: 'Inter', sans-serif; font-size: 1.04rem; color: #374151;
           line-height: 1.82; font-weight: 300;
+        }
+        .nsp-what2-premium {
+          margin-top: 22px; border-left: 3px solid #c9a84c; padding-left: 18px;
+          font-family: 'Inter', sans-serif; color: #1a2744; font-weight: 600;
+          font-size: 0.95rem; line-height: 1.65;
         }
         .nsp-what2-diagram {
           display: flex; justify-content: center; align-items: center;
@@ -703,6 +764,9 @@ function LandingPage() {
 
         /* ── RESPONSIVE ── */
         @media (max-width: 960px) {
+          .nsp-hero {
+            background: linear-gradient(180deg, #0d1628 0%, #16233f 100%);
+          }
           .nsp-hero-inner { grid-template-columns: 1fr; }
           .nsp-hero-phone-wrap { display: none; }
           .nsp-what2-grid { grid-template-columns: 1fr; gap: 36px; }
@@ -713,6 +777,7 @@ function LandingPage() {
           .nsp-step-connector { display: none; }
         }
         @media (max-width: 640px) {
+          .nsp-hero-proof { grid-template-columns: 1fr; }
           .nsp-who-grid { gap: 8px 24px; }
           .nsp-demos-grid { grid-template-columns: 1fr; max-width: 240px; margin-left: auto; margin-right: auto; }
           .nsp-steps { grid-template-columns: 1fr; }
@@ -762,17 +827,29 @@ function LandingPage() {
             <div style={{marginBottom: 28}}>
               <img src="/nextstepspro-logo.png" alt="NextStepsPro" style={{maxWidth: 280, height: 'auto', display: 'block', mixBlendMode: 'multiply'}} />
             </div>
-            <div className="nsp-hero-eyebrow">LaunchPad. One Journey. One Next Step.</div>
+            <div className="nsp-hero-eyebrow">Done-for-you LaunchPad build</div>
             <h1 className="nsp-hero-h1">
-              Your audience is ready.<br />
-              Give them one place to go.
+              Stop sending people everywhere.<br />
+              <span>Give them one next step.</span>
             </h1>
             <p className="nsp-hero-subhead">
-              We build a single professional page for your business, done for you in 3 days. You own it forever. No monthly fees.
+              A premium destination page for coaches, consultants, realtors, churches, speakers, creators, and small businesses.
             </p>
             <p className="nsp-hero-explain">
-              A LaunchPad is your single professional destination: the one place you send everyone. Instead of scattering visitors across Instagram, Calendly, your website, and payment links, your LaunchPad organizes everything and guides every visitor toward one clear next step.
+              We build the professional hub your audience can trust: your links, booking, offers, proof, resources, and payments organized into one polished path. Built for you. Owned by you. No monthly platform fee.
             </p>
+            <div className="nsp-hero-proof">
+              {[
+                ["3 Days", "Starter builds delivered fast"],
+                ["One-Time", "Starting at $497"],
+                ["Yours", "No monthly fees"],
+              ].map(([kicker, copy]) => (
+                <div className="nsp-hero-proof-item" key={kicker}>
+                  <div className="nsp-hero-proof-kicker">{kicker}</div>
+                  <div className="nsp-hero-proof-copy">{copy}</div>
+                </div>
+              ))}
+            </div>
             <div className="nsp-hero-btns">
               <button className="nsp-btn-gold" onClick={() => scroll("pricing")}>
                 See Pricing
@@ -795,9 +872,14 @@ function LandingPage() {
           <div className="nsp-eyebrow">What Is A LaunchPad</div>
           <h2 className="nsp-section-title">One Page. Every Visitor. One Clear Next Step.</h2>
           <div className="nsp-what2-grid">
-            <p className="nsp-what2-body">
-              Most professionals are sending people to five different places and losing them at every turn. Your LaunchPad changes that. One link. One destination. One next step. Every time.
-            </p>
+            <div>
+              <p className="nsp-what2-body">
+                Think of your LaunchPad as the front desk for your brand. Instagram, YouTube, Calendly, Stripe, your website, resources, and contact options all point into one professional hub with one clear action path.
+              </p>
+              <p className="nsp-what2-premium">
+                This is not a basic link-in-bio page. It is a done-for-you conversion destination built to make your business look organized, premium, and ready to work with.
+              </p>
+            </div>
             <div className="nsp-what2-diagram">
               <LaunchPadDiagram />
             </div>
@@ -869,7 +951,7 @@ function LandingPage() {
             <div className="nsp-diff-left">
               <div className="nsp-diff-left-h">Most Platforms Rent You A Page.</div>
               <p className="nsp-diff-left-p">
-                Linktree, Beacons, and similar platforms charge $8 to $24 per month, every month, forever. That adds up to $96 to $288 per year for a page you never truly own. NextStepsPro builds a fully customized LaunchPad for a single one-time investment starting at $497. No subscriptions. No recurring fees. Yours forever.
+                Link-in-bio and storefront tools can run from $8 to $99 per month, every month, forever. That adds up to $96 to $1,188 per year for a generic page you still have to assemble yourself. NextStepsPro builds a fully customized LaunchPad for a single one-time investment starting at $497. No subscriptions. No recurring platform fees. Yours forever.
               </p>
               <p className="nsp-diff-examples">Linktree, Beacons, Stan Store, and similar tools</p>
               {[
@@ -887,7 +969,7 @@ function LandingPage() {
               <table className="nsp-diff-table">
                 <thead>
                   <tr>
-                    <th>Subscription Platforms ($8–$24/month)</th>
+                    <th>Subscription Platforms ($8-$99/month)</th>
                     <th>NextStepsPro LaunchPad (One-Time)</th>
                   </tr>
                 </thead>
