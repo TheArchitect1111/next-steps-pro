@@ -92,33 +92,6 @@ function HeroPhone() {
   );
 }
 
-function PlatformIcon({ name }) {
-  const common = { fill: "none", stroke: "currentColor", strokeWidth: 2, strokeLinecap: "round", strokeLinejoin: "round" };
-  if (name === "Instagram") return (
-    <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="7" y="7" width="18" height="18" rx="5" {...common}/><circle cx="16" cy="16" r="4.5" {...common}/><circle cx="22" cy="10.5" r="1.2" fill="currentColor"/></svg>
-  );
-  if (name === "YouTube") return (
-    <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="9" width="22" height="14" rx="5" fill="currentColor"/><path d="M14 12.5v7l6-3.5-6-3.5z" fill="#fff"/></svg>
-  );
-  if (name === "LinkedIn") return (
-    <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="6" y="6" width="20" height="20" rx="3" fill="currentColor"/><path d="M11 14h3v9h-3v-9zm1.5-4.5a1.7 1.7 0 110 3.4 1.7 1.7 0 010-3.4zM16 14h2.8v1.3c.5-.8 1.4-1.6 3-1.6 2.4 0 3.2 1.5 3.2 4.2V23h-3v-4.6c0-1.2-.4-2-1.5-2s-1.5.8-1.5 2V23h-3v-9z" fill="#fff"/></svg>
-  );
-  if (name === "Stripe") return (
-    <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="6" width="22" height="20" rx="5" fill="currentColor"/><path d="M19.5 13.2c-.7-.3-1.6-.6-2.7-.6-1.1 0-1.7.4-1.7 1s.7.9 2.2 1.4c2.3.8 3.5 1.9 3.5 3.8 0 2.4-1.9 4-5 4-1.4 0-2.9-.3-3.8-.8v-2.9c.9.5 2.4 1 3.8 1 1.2 0 1.9-.4 1.9-1.1 0-.6-.6-1-2.3-1.6-2.2-.8-3.4-1.8-3.4-3.7 0-2.2 1.8-3.8 4.8-3.8 1.3 0 2.4.2 3.2.6v2.7z" fill="#fff"/></svg>
-  );
-  if (name === "Calendly") return (
-    <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="11" fill="currentColor"/><path d="M21 13.2a6 6 0 10.2 5.2" fill="none" stroke="#fff" strokeWidth="2.4" strokeLinecap="round"/></svg>
-  );
-  if (name === "Website") return (
-    <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="10" {...common}/><path d="M6 16h20M16 6c3 3.2 4.2 6.5 4.2 10S19 22.8 16 26c-3-3.2-4.2-6.5-4.2-10S13 9.2 16 6z" {...common}/></svg>
-  );
-  if (name === "Facebook") return (
-    <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="11" fill="currentColor"/><path d="M18.7 12.7h2V9.5h-2.7c-3 0-4.5 1.8-4.5 4.4v2h-2.5v3.4h2.5V26h3.6v-6.7h3l.5-3.4h-3.5v-1.7c0-1 .4-1.5 1.6-1.5z" fill="#fff"/></svg>
-  );
-  return (
-    <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="6" y="6" width="20" height="20" rx="6" fill="currentColor"/><path d="M18 10v8.4a4.2 4.2 0 11-3-4v3a1.5 1.5 0 101 1.4V10h2z" fill="#fff"/><path d="M18 10c1.2 2 2.6 3.2 4.5 3.6v2.8c-1.8-.2-3.2-.9-4.5-2v-4.4z" fill="#fff"/></svg>
-  );
-}
 
 function LaunchPadDiagram() {
   const cx = 260, cy = 252;
@@ -151,6 +124,9 @@ function LaunchPadDiagram() {
         </radialGradient>
         <clipPath id="lpd-logo-clip">
           <circle cx={cx} cy={cy} r={centerR - 2}/>
+        </clipPath>
+        <clipPath id="centerClip">
+          <circle cx={cx} cy={cy} r="52"/>
         </clipPath>
       </defs>
 
@@ -192,11 +168,11 @@ function LaunchPadDiagram() {
         return (
           <g key={`n${i}`}>
             <circle cx={x} cy={y} r={nodeR} fill={pl.fill} stroke="rgba(255,255,255,0.82)" strokeWidth="2"/>
-            <foreignObject x={x - 18} y={y - 18} width="36" height="36">
-              <div xmlns="http://www.w3.org/1999/xhtml" style={{width:36,height:36,color:"#fff",display:"flex",alignItems:"center",justifyContent:"center"}}>
-                <PlatformIcon name={pl.name} />
-              </div>
-            </foreignObject>
+            <text x={x} y={y} textAnchor="middle" dominantBaseline="central"
+              fontFamily="Inter, sans-serif" fontSize="6.5" fontWeight="700"
+              fill="#ffffff" letterSpacing="0.08em">
+              {pl.name.toUpperCase()}
+            </text>
             <text x={x} y={y + nodeR + 14} textAnchor="middle"
               fontFamily="Inter, sans-serif" fontSize="8" fontWeight="500"
               fill="#1a2744" letterSpacing="0.08em">
@@ -214,10 +190,9 @@ function LaunchPadDiagram() {
         fill="none" stroke="#c9a84c" strokeWidth="1.5" opacity="0.82"/>
 
       {/* Center: logo */}
-      <circle cx={cx} cy={cy} r={centerR - 10} fill="#ffffff" opacity="0.96"/>
       <image href="/nextstepspro-logo.png"
-        x={cx - 43} y={cy - 22} width="86" height="44"
-        clipPath="url(#lpd-logo-clip)"
+        x={cx - 40} y={cy - 20} width="80" height="40"
+        clipPath="url(#centerClip)"
         preserveAspectRatio="xMidYMid meet"/>
     </svg>
   );
@@ -874,10 +849,7 @@ function LandingPage() {
           <div className="nsp-what2-grid">
             <div>
               <p className="nsp-what2-body">
-                Think of your LaunchPad as the front desk for your brand. Instagram, YouTube, Calendly, Stripe, your website, resources, and contact options all point into one professional hub with one clear action path.
-              </p>
-              <p className="nsp-what2-premium">
-                This is not a basic link-in-bio page. It is a done-for-you conversion destination built to make your business look organized, premium, and ready to work with.
+                Most professionals are sending people to five different places and losing them at every turn. Your LaunchPad changes that. One link. One destination. One next step. Every time. We build it for you in 3 days. You own it forever. No monthly fees.
               </p>
             </div>
             <div className="nsp-what2-diagram">
@@ -951,9 +923,8 @@ function LandingPage() {
             <div className="nsp-diff-left">
               <div className="nsp-diff-left-h">Most Platforms Rent You A Page.</div>
               <p className="nsp-diff-left-p">
-                Link-in-bio and storefront tools can run from $8 to $99 per month, every month, forever. That adds up to $96 to $1,188 per year for a generic page you still have to assemble yourself. NextStepsPro builds a fully customized LaunchPad for a single one-time investment starting at $497. No subscriptions. No recurring platform fees. Yours forever.
+                Linktree, Beacons, and similar platforms charging $8 to $24 per month, which adds up to $96 to $288 every year, for a page you never truly own. NextStepsPro builds a fully customized LaunchPad for a single one-time investment starting at $497. No subscriptions. No recurring fees. Yours forever.
               </p>
-              <p className="nsp-diff-examples">Linktree, Beacons, Stan Store, and similar tools</p>
               {[
                 "One payment.",
                 "No monthly subscription.",
