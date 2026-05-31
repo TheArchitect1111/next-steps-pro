@@ -92,21 +92,21 @@ function HeroPhone() {
 }
 
 const PRICING_FEATURES = [
-  { label: "Custom Branded Launch Point",  s: true,  p: true,  g: true,  c: true  },
-  { label: "Up to 5 Sections",             s: true,  p: true,  g: true,  c: true  },
-  { label: "Social Links",                 s: true,  p: true,  g: true,  c: true  },
-  { label: "Lead Capture Form",            s: true,  p: true,  g: true,  c: true  },
-  { label: "Mobile Optimization",          s: true,  p: true,  g: true,  c: true  },
-  { label: "3-Day Delivery",               s: true,  p: true,  g: false, c: false },
-  { label: "Custom Copy Assistance",       s: false, p: true,  g: true,  c: true  },
-  { label: "Booking Integration",          s: false, p: true,  g: true,  c: true  },
-  { label: "Stripe Integration",           s: false, p: false, g: true,  c: true  },
-  { label: "Calendly Integration",         s: false, p: false, g: true,  c: true  },
-  { label: "CRM Integration",              s: false, p: false, g: true,  c: true  },
-  { label: "Email Automation",             s: false, p: false, g: true,  c: true  },
-  { label: "Advanced Automation",          s: false, p: false, g: false, c: true  },
-  { label: "Custom Workflows",             s: false, p: false, g: false, c: true  },
-  { label: "30-Day Support",               s: false, p: false, g: false, c: true  },
+  { label: "Custom Branded LaunchPad",  s: true,  p: true,  g: true,  c: true  },
+  { label: "Up to 5 Sections",          s: true,  p: true,  g: true,  c: true  },
+  { label: "Social Links",              s: true,  p: true,  g: true,  c: true  },
+  { label: "Lead Capture Form",         s: true,  p: true,  g: true,  c: true  },
+  { label: "Mobile Optimization",       s: true,  p: true,  g: true,  c: true  },
+  { label: "3-Day Delivery",            s: true,  p: true,  g: false, c: false },
+  { label: "Custom Copy Assistance",    s: false, p: true,  g: true,  c: true  },
+  { label: "Booking Integration",       s: false, p: true,  g: true,  c: true  },
+  { label: "Stripe Integration",        s: false, p: false, g: true,  c: true  },
+  { label: "Calendly Integration",      s: false, p: false, g: true,  c: true  },
+  { label: "CRM Integration",           s: false, p: false, g: true,  c: true  },
+  { label: "Email Automation",          s: false, p: false, g: true,  c: true  },
+  { label: "Advanced Automation",       s: false, p: false, g: false, c: true  },
+  { label: "Custom Workflows",          s: false, p: false, g: false, c: true  },
+  { label: "30-Day Support",            s: false, p: false, g: false, c: true  },
 ];
 
 function LandingPage() {
@@ -172,11 +172,16 @@ function LandingPage() {
         .nsp-hero-h1 {
           font-family: 'Playfair Display', Georgia, serif;
           font-size: clamp(2.2rem, 4.5vw, 3.6rem); font-weight: 700;
-          color: #1a2744; line-height: 1.18; margin-bottom: 20px;
+          color: #1a2744; line-height: 1.18; margin-bottom: 16px;
+        }
+        .nsp-hero-subhead {
+          font-family: 'Inter', sans-serif;
+          font-size: clamp(1rem, 2vw, 1.2rem); font-weight: 700;
+          color: #1a2744; line-height: 1.45; margin-bottom: 20px; max-width: 520px;
         }
         .nsp-hero-explain {
           font-family: 'Inter', sans-serif; font-size: 1rem;
-          color: #374151; line-height: 1.78; font-weight: 400;
+          color: #6b7280; line-height: 1.78; font-weight: 300;
           margin-bottom: 40px; max-width: 520px;
         }
         .nsp-hero-btns { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
@@ -221,10 +226,35 @@ function LandingPage() {
           line-height: 1.75; font-weight: 300; margin-bottom: 60px; max-width: 540px;
         }
 
+        /* ── WHAT IS A LAUNCHPAD (2-col, after hero) ── */
+        .nsp-what2 {
+          background: #ffffff; padding: 88px 24px;
+          border-top: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb;
+        }
+        .nsp-what2-grid {
+          display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+          align-items: center; margin-top: 48px;
+        }
+        .nsp-what2-body {
+          font-family: 'Inter', sans-serif; font-size: 1.02rem; color: #374151;
+          line-height: 1.82; font-weight: 300;
+        }
+        .nsp-what2-checks { display: flex; flex-direction: column; gap: 16px; }
+        .nsp-what2-check {
+          display: flex; align-items: flex-start; gap: 14px;
+          font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 500;
+          color: #1a2744; line-height: 1.4;
+        }
+        .nsp-what2-check-icon {
+          width: 28px; height: 28px; border-radius: 50%;
+          background: rgba(201,168,76,0.12); border: 1.5px solid rgba(201,168,76,0.35);
+          display: flex; align-items: center; justify-content: center;
+          color: #c9a84c; font-size: 0.78rem; font-weight: 700; flex-shrink: 0; margin-top: 1px;
+        }
+
         /* ── PROBLEM ── */
         .nsp-problem {
-          background: #ffffff; padding: 100px 24px;
-          border-top: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb;
+          background: #FAFAF8; padding: 100px 24px;
         }
         .nsp-ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
         .nsp-ba-before {
@@ -250,7 +280,7 @@ function LandingPage() {
         }
 
         /* ── WHY DIFFERENT ── */
-        .nsp-diff { background: #FAFAF8; padding: 100px 24px; }
+        .nsp-diff { background: #ffffff; padding: 100px 24px; border-top: 1px solid #e5e7eb; }
         .nsp-diff-cols {
           display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 56px;
         }
@@ -272,6 +302,10 @@ function LandingPage() {
           font-family: 'Inter', sans-serif; font-size: 0.9rem; color: rgba(255,255,255,0.65);
           line-height: 1.75; font-weight: 300; margin-bottom: 28px;
         }
+        .nsp-diff-examples {
+          font-family: 'Inter', sans-serif; font-size: 0.8rem; color: rgba(255,255,255,0.4);
+          font-weight: 400; margin-bottom: 24px; font-style: italic;
+        }
         .nsp-diff-point {
           font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 700;
           color: #c9a84c; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;
@@ -283,12 +317,11 @@ function LandingPage() {
           background: #ffffff; border: 1px solid #e5e7eb; border-radius: 16px; overflow: hidden;
         }
         .nsp-diff-table { width: 100%; border-collapse: collapse; }
-        .nsp-diff-table thead tr {
-          background: #1a2744;
-        }
+        .nsp-diff-table thead tr { background: #1a2744; }
         .nsp-diff-table thead th {
-          font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 700;
-          letter-spacing: 0.12em; text-transform: uppercase; padding: 14px 20px; text-align: left;
+          font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 700;
+          letter-spacing: 0.1em; text-transform: uppercase; padding: 14px 20px; text-align: left;
+          line-height: 1.5;
         }
         .nsp-diff-table thead th:first-child { color: rgba(255,255,255,0.55); }
         .nsp-diff-table thead th:last-child { color: #c9a84c; }
@@ -309,9 +342,7 @@ function LandingPage() {
           font-size: clamp(1rem, 2vw, 1.3rem); color: #c9a84c;
           font-weight: 400; margin-bottom: 20px; line-height: 1.5;
         }
-        .nsp-diff-checks {
-          display: flex; flex-wrap: wrap; gap: 20px;
-        }
+        .nsp-diff-checks { display: flex; flex-wrap: wrap; gap: 20px; }
         .nsp-diff-check {
           display: flex; align-items: center; gap: 8px;
           font-family: 'Inter', sans-serif; font-size: 0.82rem; font-weight: 500;
@@ -320,12 +351,12 @@ function LandingPage() {
         .nsp-diff-check-icon { color: #c9a84c; font-size: 0.9rem; flex-shrink: 0; }
 
         /* ── WHO FOR ── */
-        .nsp-who { background: #ffffff; padding: 100px 24px; border-top: 1px solid #e5e7eb; }
+        .nsp-who { background: #FAFAF8; padding: 100px 24px; border-top: 1px solid #e5e7eb; }
         .nsp-who-grid {
           display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 52px;
         }
         .nsp-who-card {
-          background: #FAFAF8; border: 1px solid #e5e7eb; border-radius: 16px;
+          background: #ffffff; border: 1px solid #e5e7eb; border-radius: 16px;
           padding: 28px 20px; text-align: center;
           transition: box-shadow 0.2s, transform 0.2s; cursor: default;
         }
@@ -341,19 +372,6 @@ function LandingPage() {
         .nsp-who-label {
           font-family: 'Inter', sans-serif; font-size: 0.875rem;
           font-weight: 600; color: #1a2744; letter-spacing: 0.01em;
-        }
-
-        /* ── WHAT IS A LAUNCH POINT ── */
-        .nsp-what { background: #1a2744; padding: 88px 24px; text-align: center; position: relative; overflow: hidden; }
-        .nsp-what::before {
-          content: ''; position: absolute; inset: 0;
-          background: radial-gradient(ellipse at 50% 50%, rgba(201,168,76,0.08) 0%, transparent 65%);
-          pointer-events: none;
-        }
-        .nsp-what-body {
-          font-family: 'Inter', sans-serif; font-size: 1.05rem; color: rgba(255,255,255,0.7);
-          line-height: 1.82; font-weight: 300; max-width: 660px; margin: 0 auto;
-          position: relative; z-index: 1;
         }
 
         /* ── DEMOS ── */
@@ -419,24 +437,24 @@ function LandingPage() {
         }
 
         /* ── PRICING ── */
-        .nsp-pricing { background: #FAFAF8; padding: 100px 24px; }
+        .nsp-pricing { background: #FAFAF8; padding: 100px 24px; border-top: 1px solid #e5e7eb; }
         .nsp-compare-wrap { margin-top: 52px; overflow-x: auto; }
-        .nsp-compare-table { width: 100%; border-collapse: collapse; min-width: 640px; }
+        .nsp-compare-table { width: 100%; border-collapse: collapse; min-width: 680px; }
         .nsp-compare-table thead tr { background: #1a2744; }
         .nsp-compare-table thead th {
-          font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 700;
-          letter-spacing: 0.08em; text-transform: uppercase; padding: 18px 20px;
+          font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 700;
+          letter-spacing: 0.06em; text-transform: uppercase; padding: 18px 20px;
           text-align: center; color: rgba(255,255,255,0.6); white-space: nowrap;
         }
         .nsp-compare-table thead th:first-child { text-align: left; color: rgba(255,255,255,0.45); }
-        .nsp-compare-table thead th.th-pro { color: #c9a84c; border-left: 2px solid #c9a84c; border-right: 2px solid #c9a84c; position: relative; }
+        .nsp-compare-table thead th.th-pro { color: #c9a84c; border-left: 2px solid #c9a84c; border-right: 2px solid #c9a84c; }
         .nsp-compare-badge {
           display: block; font-size: 0.58rem; letter-spacing: 0.14em; color: #c9a84c;
           margin-top: 4px; font-weight: 700;
         }
-        .nsp-compare-table thead th.th-price {
+        .th-price {
           display: block; font-family: 'Playfair Display', Georgia, serif;
-          font-size: 1.1rem; font-weight: 700; color: #ffffff; letter-spacing: 0;
+          font-size: 1.05rem; font-weight: 700; color: #ffffff; letter-spacing: 0;
           text-transform: none; margin-top: 2px;
         }
         .nsp-compare-table tbody tr:nth-child(odd) { background: #ffffff; }
@@ -452,7 +470,7 @@ function LandingPage() {
         .nsp-check { color: #c9a84c; font-size: 1rem; font-weight: 700; }
         .nsp-dash { color: #d1d5db; font-size: 1.1rem; }
         .nsp-compare-btns {
-          display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 12px; margin-top: 24px; min-width: 640px;
+          display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 12px; margin-top: 24px; min-width: 680px;
         }
         .nsp-compare-btn {
           display: block; text-align: center; padding: 14px 20px; border-radius: 8px;
@@ -507,6 +525,7 @@ function LandingPage() {
         @media (max-width: 960px) {
           .nsp-hero-inner { grid-template-columns: 1fr; }
           .nsp-hero-phone-wrap { display: none; }
+          .nsp-what2-grid { grid-template-columns: 1fr; gap: 36px; }
           .nsp-ba-grid { grid-template-columns: 1fr; }
           .nsp-diff-cols { grid-template-columns: 1fr; }
           .nsp-who-grid { grid-template-columns: repeat(2, 1fr); }
@@ -535,7 +554,7 @@ function LandingPage() {
     ["Generic templates",           "Customized for your business"],
     ["Link organization",           "Business organization"],
     ["Self-service setup",          "Done-for-you implementation"],
-    ["Basic profiles",              "Strategic Launch Point"],
+    ["Basic profiles",              "Strategic LaunchPad"],
     ["Platform dependent",          "Built around your business"],
   ];
 
@@ -559,13 +578,16 @@ function LandingPage() {
       <section className="nsp-hero" id="hero">
         <div className="nsp-hero-inner">
           <div>
-            <div className="nsp-hero-eyebrow">One Hub. One Journey. One Next Step.</div>
+            <div className="nsp-hero-eyebrow">LaunchPad. One Journey. One Next Step.</div>
             <h1 className="nsp-hero-h1">
               Your audience is ready.<br />
               Give them one place to go.
             </h1>
+            <p className="nsp-hero-subhead">
+              We build a single professional page for your business — done for you, in 3 days, you own it forever. No monthly fees.
+            </p>
             <p className="nsp-hero-explain">
-              A Launch Point is your single professional destination — the one place you send everyone. Instead of scattering visitors across Instagram, Calendly, your website, and payment links, your Launch Point organizes everything and guides every visitor toward one clear next step.
+              A LaunchPad is your single professional destination — the one place you send everyone. Instead of scattering visitors across Instagram, Calendly, your website, and payment links, your LaunchPad organizes everything and guides every visitor toward one clear next step.
             </p>
             <div className="nsp-hero-btns">
               <button className="nsp-btn-gold" onClick={() => scroll("pricing")}>
@@ -583,17 +605,43 @@ function LandingPage() {
         </div>
       </section>
 
+      {/* ── WHAT IS A LAUNCHPAD ── */}
+      <section className="nsp-what2" id="what">
+        <div className="nsp-inner">
+          <div className="nsp-eyebrow">What Is A LaunchPad</div>
+          <h2 className="nsp-section-title">One Page. Every Visitor. One Clear Next Step.</h2>
+          <div className="nsp-what2-grid">
+            <p className="nsp-what2-body">
+              A LaunchPad is your single professional destination — the one place you send everyone. Instead of scattering visitors across Instagram, Calendly, your website, and payment links, your LaunchPad organizes everything and guides every visitor toward one clear next step. We build it for you. You own it forever.
+            </p>
+            <div className="nsp-what2-checks">
+              {[
+                "Built and designed for you",
+                "Live in 3 business days",
+                "One-time investment",
+                "You own it forever — no monthly fees",
+              ].map(item => (
+                <div key={item} className="nsp-what2-check">
+                  <div className="nsp-what2-check-icon">✓</div>
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── PROBLEM ── */}
       <section className="nsp-problem" id="problem">
         <div className="nsp-inner">
           <div className="nsp-eyebrow">The Problem</div>
           <h2 className="nsp-section-title">Scattered links. Confused visitors.<br />Missed conversions.</h2>
           <p className="nsp-section-sub">
-            Most businesses have presence everywhere and clarity nowhere. A Launch Point fixes that in one build.
+            Most businesses have presence everywhere and clarity nowhere. A LaunchPad fixes that in one build.
           </p>
           <div className="nsp-ba-grid">
             <div className="nsp-ba-before">
-              <div className="nsp-ba-label" style={{ color: "#9ca3af" }}>Without a Launch Point</div>
+              <div className="nsp-ba-label" style={{ color: "#9ca3af" }}>Without a LaunchPad</div>
               {[
                 "Links scattered across Instagram, TikTok, email, and websites",
                 "Visitors who land and don't know what to do next",
@@ -607,7 +655,7 @@ function LandingPage() {
               ))}
             </div>
             <div className="nsp-ba-after">
-              <div className="nsp-ba-label" style={{ color: C.gold }}>With Your Launch Point</div>
+              <div className="nsp-ba-label" style={{ color: C.gold }}>With Your LaunchPad</div>
               {[
                 "One destination that organizes your entire presence",
                 "A clear, guided journey from first visit to next step",
@@ -627,15 +675,16 @@ function LandingPage() {
       {/* ── WHY DIFFERENT ── */}
       <section className="nsp-diff" id="why">
         <div className="nsp-inner">
-          <div className="nsp-eyebrow">Why NextStepsPro Is Different</div>
+          <div className="nsp-eyebrow">Why NextStepsPro LaunchPad Is Different</div>
           <h2 className="nsp-section-title">You're Not Renting Another Tool.<br />You're Building a Business Asset.</h2>
           <div className="nsp-diff-cols">
 
             <div className="nsp-diff-left">
               <div className="nsp-diff-left-h">Most Platforms Rent You A Page.</div>
               <p className="nsp-diff-left-p">
-                Link-in-bio tools and subscription platforms charge monthly fees to access features you never truly own. NextStepsPro builds a customized Launch Point for your business designed around your goals, your brand, and your next step strategy.
+                Tools like Linktree and Beacons charge monthly fees to access features you never truly own. NextStepsPro LaunchPad builds a customized page for your business designed around your goals, your brand, and your next step strategy.
               </p>
+              <p className="nsp-diff-examples">Linktree, Beacons, Stan Store, and similar tools</p>
               {[
                 "One payment.",
                 "No monthly subscription.",
@@ -651,8 +700,8 @@ function LandingPage() {
               <table className="nsp-diff-table">
                 <thead>
                   <tr>
-                    <th>Subscription Platforms</th>
-                    <th>NextStepsPro</th>
+                    <th>Subscription Platforms ($8–$24/month)</th>
+                    <th>NextStepsPro LaunchPad (One-Time)</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -715,26 +764,13 @@ function LandingPage() {
         </div>
       </section>
 
-      {/* ── WHAT IS A LAUNCH POINT ── */}
-      <section className="nsp-what" id="what">
-        <div className="nsp-inner" style={{ position: "relative", zIndex: 1 }}>
-          <div className="nsp-eyebrow" style={{ color: C.gold }}>What Is A Launch Point</div>
-          <h2 className="nsp-section-title nsp-section-title-white" style={{ maxWidth: 700, margin: "0 auto 20px", textAlign: "center" }}>
-            One Destination. Every Visitor. One Next Step.
-          </h2>
-          <p className="nsp-what-body">
-            Most businesses send visitors to a website, a social profile, a booking page, and a payment link that were never designed to work together. A Launch Point is the destination that connects everything. It tells visitors who you are, what you offer, and exactly what to do next — in one place, every time.
-          </p>
-        </div>
-      </section>
-
       {/* ── LIVE DEMOS ── */}
       <section className="nsp-demos" id="demos">
         <div className="nsp-inner">
           <div className="nsp-eyebrow" style={{ color: C.gold }}>Live Examples</div>
-          <h2 className="nsp-section-title nsp-section-title-white">See what a Launch Point looks like.</h2>
+          <h2 className="nsp-section-title nsp-section-title-white">See what a LaunchPad looks like.</h2>
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "1rem", color: "rgba(255,255,255,0.55)", fontWeight: 300, lineHeight: 1.75, maxWidth: 520 }}>
-            Every Hub is built around one client's specific audience and one next step. Here are four examples across different industries.
+            Every LaunchPad is built around one client's specific audience and one next step. Here are four examples across different industries.
           </p>
           <div className="nsp-demos-grid">
 
@@ -823,14 +859,14 @@ function LandingPage() {
           <div className="nsp-eyebrow">The Process</div>
           <h2 className="nsp-section-title">From kickoff to live in days, not months.</h2>
           <p className="nsp-section-sub">
-            A focused, collaborative process designed to get you live fast and convert from day one.
+            A focused, collaborative process designed to get your LaunchPad live fast and converting from day one.
           </p>
           <div className="nsp-steps">
             {[
               { n: "01", title: "Discovery Call", desc: "We spend 30 minutes understanding your audience, your offer, and the one next step you want visitors to take." },
-              { n: "02", title: "Strategy & Design", desc: "We map your visitor journey and design a Hub that directs attention where it matters most." },
-              { n: "03", title: "Build & Integrate", desc: "We build your Launch Point with all integrations — Calendly, Stripe, email capture — wired up and tested." },
-              { n: "04", title: "Launch", desc: "You review, we refine, and your Hub goes live. Starter builds in 3 days. Growth builds in 7 to 14." },
+              { n: "02", title: "Strategy & Design", desc: "We map your visitor journey and design a LaunchPad that directs attention where it matters most." },
+              { n: "03", title: "Build & Integrate", desc: "We build your LaunchPad with all integrations — Calendly, Stripe, email capture — wired up and tested." },
+              { n: "04", title: "Launch", desc: "You review, we refine, and your LaunchPad goes live. Starter builds in 3 days. Growth builds in 7 to 14." },
             ].map(({ n, title, desc }, i) => (
               <div key={n} className="nsp-step">
                 <div className="nsp-step-num">{n}</div>
@@ -849,7 +885,7 @@ function LandingPage() {
           <div className="nsp-eyebrow">Investment</div>
           <h2 className="nsp-section-title">Packages For Every Stage.</h2>
           <p className="nsp-section-sub">
-            See exactly what's included in each package.
+            See exactly what's included in each LaunchPad package.
           </p>
           <div className="nsp-compare-wrap">
             <table className="nsp-compare-table">
@@ -857,23 +893,23 @@ function LandingPage() {
                 <tr>
                   <th style={{ textAlign: "left" }}>Feature</th>
                   <th>
-                    Starter
-                    <span className="nsp-compare-badge" style={{ opacity: 0 }}>placeholder</span>
+                    LaunchPad Starter
+                    <span className="nsp-compare-badge" style={{ opacity: 0 }}>–</span>
                     <span className="th-price">$497</span>
                   </th>
                   <th className="th-pro">
-                    Pro
+                    LaunchPad Pro
                     <span className="nsp-compare-badge">Most Popular</span>
                     <span className="th-price">$997</span>
                   </th>
                   <th>
-                    Growth
-                    <span className="nsp-compare-badge" style={{ opacity: 0 }}>placeholder</span>
+                    LaunchPad Growth
+                    <span className="nsp-compare-badge" style={{ opacity: 0 }}>–</span>
                     <span className="th-price">$1,500</span>
                   </th>
                   <th>
-                    Custom
-                    <span className="nsp-compare-badge" style={{ opacity: 0 }}>placeholder</span>
+                    LaunchPad Custom
+                    <span className="nsp-compare-badge" style={{ opacity: 0 }}>–</span>
                     <span className="th-price">$3,000+</span>
                   </th>
                 </tr>
@@ -891,16 +927,16 @@ function LandingPage() {
               </tbody>
             </table>
             <div className="nsp-compare-btns">
-              <a href="mailto:hello@nextstepspro.com?subject=Starter Package" className="nsp-compare-btn nsp-compare-btn-outline">
+              <a href="mailto:hello@nextstepspro.com?subject=LaunchPad Starter" className="nsp-compare-btn nsp-compare-btn-outline">
                 Get Starter
               </a>
-              <a href="mailto:hello@nextstepspro.com?subject=Pro Package" className="nsp-compare-btn nsp-compare-btn-gold">
+              <a href="mailto:hello@nextstepspro.com?subject=LaunchPad Pro" className="nsp-compare-btn nsp-compare-btn-gold">
                 Get Pro
               </a>
-              <a href="mailto:hello@nextstepspro.com?subject=Growth Package" className="nsp-compare-btn nsp-compare-btn-dark">
+              <a href="mailto:hello@nextstepspro.com?subject=LaunchPad Growth" className="nsp-compare-btn nsp-compare-btn-dark">
                 Get Growth
               </a>
-              <a href="mailto:hello@nextstepspro.com?subject=Custom Package" className="nsp-compare-btn nsp-compare-btn-outline">
+              <a href="mailto:hello@nextstepspro.com?subject=LaunchPad Custom" className="nsp-compare-btn nsp-compare-btn-outline">
                 Let's Talk
               </a>
             </div>
@@ -916,10 +952,10 @@ function LandingPage() {
             One destination.<br />Every next step.
           </h2>
           <p className="nsp-final-sub">
-            Stop sending people everywhere and hoping they figure it out. Give them a Launch Point — and a reason to act.
+            Stop sending people everywhere and hoping they figure it out. Give them a LaunchPad — and a reason to act.
           </p>
           <a href="mailto:hello@nextstepspro.com" className="nsp-btn-gold">
-            Start Your Launch Point
+            Build My LaunchPad →
           </a>
           <div className="nsp-trust-badges">
             {[
