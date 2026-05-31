@@ -93,19 +93,19 @@ function HeroPhone() {
 
 function LaunchPadDiagram() {
   const cx = 260, cy = 252;
-  const ringR = 158;
-  const nodeR = 31;
+  const ringR = 163;
+  const nodeR = 36;
   const centerR = 50;
 
   const platforms = [
-    { name: "Instagram", abbr: "IG", fill: "rgba(225,48,108,0.09)", stroke: "rgba(225,48,108,0.32)", deg: -90  },
-    { name: "YouTube",   abbr: "YT", fill: "rgba(200,0,0,0.08)",    stroke: "rgba(200,0,0,0.28)",    deg: -45  },
-    { name: "LinkedIn",  abbr: "LI", fill: "rgba(10,102,194,0.09)", stroke: "rgba(10,102,194,0.3)",  deg: 0    },
-    { name: "Stripe",    abbr: "ST", fill: "rgba(99,91,255,0.09)",  stroke: "rgba(99,91,255,0.3)",   deg: 45   },
-    { name: "Calendly",  abbr: "CL", fill: "rgba(0,106,84,0.09)",   stroke: "rgba(0,106,84,0.3)",    deg: 90   },
-    { name: "Website",   abbr: "WB", fill: "rgba(26,39,68,0.07)",   stroke: "rgba(26,39,68,0.22)",   deg: 135  },
-    { name: "Facebook",  abbr: "FB", fill: "rgba(24,119,242,0.09)", stroke: "rgba(24,119,242,0.3)",  deg: 180  },
-    { name: "TikTok",    abbr: "TT", fill: "rgba(0,0,0,0.05)",      stroke: "rgba(0,0,0,0.18)",      deg: 225  },
+    { name: "Instagram", fill: "#E1306C", deg: -90  },
+    { name: "YouTube",   fill: "#FF0000", deg: -45  },
+    { name: "LinkedIn",  fill: "#0077B5", deg: 0    },
+    { name: "Stripe",    fill: "#6772E5", deg: 45   },
+    { name: "Calendly",  fill: "#006BFF", deg: 90   },
+    { name: "Website",   fill: "#1a2744", deg: 135  },
+    { name: "Facebook",  fill: "#1877F2", deg: 180  },
+    { name: "TikTok",    fill: "#010101", deg: 225  },
   ];
 
   const pt = (deg) => ({
@@ -120,6 +120,9 @@ function LaunchPadDiagram() {
           <stop offset="0%" stopColor="#c9a84c" stopOpacity="0.11"/>
           <stop offset="100%" stopColor="#c9a84c" stopOpacity="0"/>
         </radialGradient>
+        <clipPath id="lpd-logo-clip">
+          <circle cx={cx} cy={cy} r={centerR - 2}/>
+        </clipPath>
       </defs>
 
       {/* Subtle orbit ring */}
@@ -159,24 +162,20 @@ function LaunchPadDiagram() {
         const { x, y } = pt(pl.deg);
         return (
           <g key={`n${i}`}>
-            <circle cx={x} cy={y} r={nodeR} fill={pl.fill} stroke={pl.stroke} strokeWidth="1.5"/>
-            <text x={x} y={y + 4} textAnchor="middle"
-              fontFamily="Inter, sans-serif" fontSize="11" fontWeight="700"
-              fill="#1a2744" letterSpacing="0.06em">
-              {pl.abbr}
+            <circle cx={x} cy={y} r={nodeR} fill={pl.fill} stroke="rgba(255,255,255,0.65)" strokeWidth="1.5"/>
+            <text x={x} y={y} textAnchor="middle" dominantBaseline="central"
+              fontFamily="Inter, sans-serif" fontSize="6.5" fontWeight="700"
+              fill="#ffffff" letterSpacing="0.08em">
+              {pl.name.toUpperCase()}
             </text>
             <text x={x} y={y + nodeR + 14} textAnchor="middle"
               fontFamily="Inter, sans-serif" fontSize="8" fontWeight="500"
-              fill="#6b7280" letterSpacing="0.08em">
+              fill="#1a2744" letterSpacing="0.08em">
               {pl.name.toUpperCase()}
             </text>
           </g>
         );
       })}
-
-      {/* Center: outer halo ring */}
-      <circle cx={cx} cy={cy} r={centerR + 6}
-        fill="none" stroke="rgba(201,168,76,0.16)" strokeWidth="1"/>
 
       {/* Center: main navy circle */}
       <circle cx={cx} cy={cy} r={centerR} fill="#1a2744"/>
@@ -185,17 +184,11 @@ function LaunchPadDiagram() {
       <circle cx={cx} cy={cy} r={centerR}
         fill="none" stroke="#c9a84c" strokeWidth="1.5" opacity="0.82"/>
 
-      {/* Center text */}
-      <text x={cx} y={cy - 7} textAnchor="middle"
-        fontFamily="Inter, sans-serif" fontSize="15" fontWeight="700"
-        fill="#c9a84c" letterSpacing="0.16em">
-        NSP
-      </text>
-      <text x={cx} y={cy + 11} textAnchor="middle"
-        fontFamily="Inter, sans-serif" fontSize="7.5" fontWeight="500"
-        fill="rgba(255,255,255,0.58)" letterSpacing="0.22em">
-        LAUNCHPAD
-      </text>
+      {/* Center: logo */}
+      <image href="/nextstepspro-logo.png"
+        x={cx - 30} y={cy - 30} width="60" height="60"
+        clipPath="url(#lpd-logo-clip)"
+        preserveAspectRatio="xMidYMid meet"/>
     </svg>
   );
 }
