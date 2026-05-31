@@ -95,8 +95,8 @@ function HeroPhone() {
 
 function LaunchPadDiagram() {
   const cx = 260, cy = 252;
-  const ringR = 163;
-  const nodeR = 36;
+  const ringR = 168;
+  const nodeR = 38;
   const centerR = 50;
 
   const platforms = [
@@ -126,7 +126,7 @@ function LaunchPadDiagram() {
           <circle cx={cx} cy={cy} r={centerR - 2}/>
         </clipPath>
         <clipPath id="centerClip">
-          <circle cx={cx} cy={cy} r="52"/>
+          <circle cx={cx} cy={cy} r={centerR - 1}/>
         </clipPath>
       </defs>
 
@@ -169,8 +169,8 @@ function LaunchPadDiagram() {
           <g key={`n${i}`}>
             <circle cx={x} cy={y} r={nodeR} fill={pl.fill} stroke="rgba(255,255,255,0.82)" strokeWidth="2"/>
             <text x={x} y={y} textAnchor="middle" dominantBaseline="central"
-              fontFamily="Inter, sans-serif" fontSize="6.5" fontWeight="700"
-              fill="#ffffff" letterSpacing="0.08em">
+              fontFamily="Inter, sans-serif" fontSize="9" fontWeight="700"
+              fill="#ffffff" letterSpacing="0.06em">
               {pl.name.toUpperCase()}
             </text>
             <text x={x} y={y + nodeR + 14} textAnchor="middle"
@@ -191,7 +191,7 @@ function LaunchPadDiagram() {
 
       {/* Center: logo */}
       <image href="/nextstepspro-logo.png"
-        x={cx - 40} y={cy - 20} width="80" height="40"
+        x={cx - 50} y={cy - 25} width="100" height="50"
         clipPath="url(#centerClip)"
         preserveAspectRatio="xMidYMid meet"/>
     </svg>
@@ -323,27 +323,18 @@ function LandingPage() {
         }
         .nsp-nav-links a:hover { color: #1a2744; }
         .nsp-nav-cta {
-          display: inline-block; background: #1a2744; color: #ffffff; border: none;
+          display: inline-block; background: #c9a84c; color: #1a2744; border: none;
           padding: 10px 24px; font-family: 'Inter', sans-serif; font-size: 0.78rem;
-          font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase;
+          font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
           border-radius: 6px; cursor: pointer; text-decoration: none;
           transition: opacity 0.18s, transform 0.18s; white-space: nowrap;
         }
         .nsp-nav-cta:hover { opacity: 0.85; transform: translateY(-1px); }
 
         /* ── HERO ── */
-        .nsp-hero {
-          background:
-            linear-gradient(120deg, rgba(9,18,35,0.96) 0%, rgba(18,30,54,0.94) 46%, rgba(250,250,248,0.98) 46%, #FAFAF8 100%);
-          padding: 84px 24px 110px; overflow: hidden; position: relative;
-        }
-        .nsp-hero::before {
-          content: ''; position: absolute; inset: 0;
-          background: radial-gradient(circle at 18% 18%, rgba(201,168,76,0.16) 0%, transparent 34%);
-          pointer-events: none;
-        }
+        .nsp-hero { background: #FAFAF8; padding: 84px 24px 110px; overflow: hidden; }
         .nsp-hero-inner {
-          max-width: 1100px; margin: 0 auto; position: relative; z-index: 1;
+          max-width: 1100px; margin: 0 auto;
           display: grid; grid-template-columns: 1fr 420px; gap: 60px; align-items: center;
         }
         .nsp-hero-eyebrow {
@@ -353,17 +344,17 @@ function LandingPage() {
         .nsp-hero-h1 {
           font-family: 'Playfair Display', Georgia, serif;
           font-size: clamp(2.2rem, 4.5vw, 3.6rem); font-weight: 700;
-          color: #ffffff; line-height: 1.12; margin-bottom: 16px;
+          color: #1a2744; line-height: 1.12; margin-bottom: 16px;
         }
         .nsp-hero-h1 span { color: #c9a84c; }
         .nsp-hero-subhead {
           font-family: 'Inter', sans-serif;
           font-size: clamp(1rem, 2vw, 1.2rem); font-weight: 700;
-          color: rgba(255,255,255,0.9); line-height: 1.45; margin-bottom: 18px; max-width: 520px;
+          color: #1a2744; line-height: 1.45; margin-bottom: 18px; max-width: 520px;
         }
         .nsp-hero-explain {
           font-family: 'Inter', sans-serif; font-size: 1rem;
-          color: rgba(255,255,255,0.68); line-height: 1.78; font-weight: 300;
+          color: #6b7280; line-height: 1.78; font-weight: 300;
           margin-bottom: 26px; max-width: 520px;
         }
         .nsp-hero-proof {
@@ -371,8 +362,7 @@ function LandingPage() {
           max-width: 520px; margin: 0 0 34px;
         }
         .nsp-hero-proof-item {
-          border: 1px solid rgba(201,168,76,0.28);
-          background: rgba(255,255,255,0.06);
+          border: 1px solid rgba(26,39,68,0.1); background: #ffffff;
           border-radius: 12px; padding: 14px 14px;
         }
         .nsp-hero-proof-kicker {
@@ -380,7 +370,7 @@ function LandingPage() {
           letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; margin-bottom: 5px;
         }
         .nsp-hero-proof-copy {
-          font-family: 'Inter', sans-serif; color: rgba(255,255,255,0.82); font-size: 0.82rem;
+          font-family: 'Inter', sans-serif; color: #374151; font-size: 0.82rem;
           line-height: 1.45; font-weight: 500;
         }
         .nsp-hero-btns { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
@@ -394,17 +384,17 @@ function LandingPage() {
         .nsp-btn-gold:hover { opacity: 0.87; transform: translateY(-1px); }
         .nsp-btn-ghost {
           display: inline-flex; align-items: center; gap: 6px;
-          background: transparent; color: rgba(255,255,255,0.72); border: none;
+          background: transparent; color: #6b7280; border: none;
           padding: 15px 4px; font-family: 'Inter', sans-serif; font-size: 0.82rem;
           font-weight: 500; cursor: pointer; text-decoration: none; transition: color 0.18s;
         }
-        .nsp-btn-ghost:hover { color: #ffffff; }
+        .nsp-btn-ghost:hover { color: #1a2744; }
         .nsp-hero-phone-wrap {
           display: flex; justify-content: center; align-items: center; position: relative;
         }
         .nsp-hero-phone-glow {
           position: absolute; width: 300px; height: 300px; border-radius: 50%;
-          background: radial-gradient(circle, rgba(201,168,76,0.2) 0%, transparent 70%);
+          background: radial-gradient(circle, rgba(201,168,76,0.1) 0%, transparent 70%);
           pointer-events: none;
         }
 
@@ -800,7 +790,7 @@ function LandingPage() {
         <div className="nsp-hero-inner">
           <div>
             <div style={{marginBottom: 28}}>
-              <img src="/nextstepspro-logo.png" alt="NextStepsPro" style={{maxWidth: 280, height: 'auto', display: 'block', mixBlendMode: 'multiply'}} />
+              <img src="/nextstepspro-logo.png" alt="NextStepsPro" style={{maxWidth: 200, height: 'auto', display: 'block'}} />
             </div>
             <div className="nsp-hero-eyebrow">Done-for-you LaunchPad build</div>
             <h1 className="nsp-hero-h1">
