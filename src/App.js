@@ -91,6 +91,115 @@ function HeroPhone() {
   );
 }
 
+function LaunchPadDiagram() {
+  const cx = 260, cy = 252;
+  const ringR = 158;
+  const nodeR = 31;
+  const centerR = 50;
+
+  const platforms = [
+    { name: "Instagram", abbr: "IG", fill: "rgba(225,48,108,0.09)", stroke: "rgba(225,48,108,0.32)", deg: -90  },
+    { name: "YouTube",   abbr: "YT", fill: "rgba(200,0,0,0.08)",    stroke: "rgba(200,0,0,0.28)",    deg: -45  },
+    { name: "LinkedIn",  abbr: "LI", fill: "rgba(10,102,194,0.09)", stroke: "rgba(10,102,194,0.3)",  deg: 0    },
+    { name: "Stripe",    abbr: "ST", fill: "rgba(99,91,255,0.09)",  stroke: "rgba(99,91,255,0.3)",   deg: 45   },
+    { name: "Calendly",  abbr: "CL", fill: "rgba(0,106,84,0.09)",   stroke: "rgba(0,106,84,0.3)",    deg: 90   },
+    { name: "Website",   abbr: "WB", fill: "rgba(26,39,68,0.07)",   stroke: "rgba(26,39,68,0.22)",   deg: 135  },
+    { name: "Facebook",  abbr: "FB", fill: "rgba(24,119,242,0.09)", stroke: "rgba(24,119,242,0.3)",  deg: 180  },
+    { name: "TikTok",    abbr: "TT", fill: "rgba(0,0,0,0.05)",      stroke: "rgba(0,0,0,0.18)",      deg: 225  },
+  ];
+
+  const pt = (deg) => ({
+    x: cx + ringR * Math.cos((deg * Math.PI) / 180),
+    y: cy + ringR * Math.sin((deg * Math.PI) / 180),
+  });
+
+  return (
+    <svg viewBox="0 0 520 516" style={{ width: "100%", maxWidth: 500, height: "auto", display: "block", margin: "0 auto" }}>
+      <defs>
+        <radialGradient id="lpd-glow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#c9a84c" stopOpacity="0.11"/>
+          <stop offset="100%" stopColor="#c9a84c" stopOpacity="0"/>
+        </radialGradient>
+      </defs>
+
+      {/* Subtle orbit ring */}
+      <circle cx={cx} cy={cy} r={ringR} fill="none" stroke="rgba(26,39,68,0.07)" strokeWidth="1" strokeDasharray="3 8"/>
+
+      {/* Center glow */}
+      <circle cx={cx} cy={cy} r={94} fill="url(#lpd-glow)"/>
+
+      {/* Connecting lines */}
+      {platforms.map((pl, i) => {
+        const { x, y } = pt(pl.deg);
+        return (
+          <line key={`l${i}`} x1={x} y1={y} x2={cx} y2={cy}
+            stroke="rgba(201,168,76,0.28)" strokeWidth="1"/>
+        );
+      })}
+
+      {/* Animated pulse dots traveling toward center */}
+      {platforms.map((pl, i) => {
+        const { x, y } = pt(pl.deg);
+        const dur = 2.6 + (i % 4) * 0.45;
+        const begin = i * 0.44;
+        return (
+          <circle key={`d${i}`} r="2.5" fill="#c9a84c" opacity="0.88">
+            <animateMotion
+              dur={`${dur.toFixed(2)}s`}
+              begin={`${begin.toFixed(2)}s`}
+              repeatCount="indefinite"
+              path={`M ${x.toFixed(1)} ${y.toFixed(1)} L ${cx} ${cy}`}
+            />
+          </circle>
+        );
+      })}
+
+      {/* Platform nodes */}
+      {platforms.map((pl, i) => {
+        const { x, y } = pt(pl.deg);
+        return (
+          <g key={`n${i}`}>
+            <circle cx={x} cy={y} r={nodeR} fill={pl.fill} stroke={pl.stroke} strokeWidth="1.5"/>
+            <text x={x} y={y + 4} textAnchor="middle"
+              fontFamily="Inter, sans-serif" fontSize="11" fontWeight="700"
+              fill="#1a2744" letterSpacing="0.06em">
+              {pl.abbr}
+            </text>
+            <text x={x} y={y + nodeR + 14} textAnchor="middle"
+              fontFamily="Inter, sans-serif" fontSize="8" fontWeight="500"
+              fill="#6b7280" letterSpacing="0.08em">
+              {pl.name.toUpperCase()}
+            </text>
+          </g>
+        );
+      })}
+
+      {/* Center: outer halo ring */}
+      <circle cx={cx} cy={cy} r={centerR + 6}
+        fill="none" stroke="rgba(201,168,76,0.16)" strokeWidth="1"/>
+
+      {/* Center: main navy circle */}
+      <circle cx={cx} cy={cy} r={centerR} fill="#1a2744"/>
+
+      {/* Center: gold border */}
+      <circle cx={cx} cy={cy} r={centerR}
+        fill="none" stroke="#c9a84c" strokeWidth="1.5" opacity="0.82"/>
+
+      {/* Center text */}
+      <text x={cx} y={cy - 7} textAnchor="middle"
+        fontFamily="Inter, sans-serif" fontSize="15" fontWeight="700"
+        fill="#c9a84c" letterSpacing="0.16em">
+        NSP
+      </text>
+      <text x={cx} y={cy + 11} textAnchor="middle"
+        fontFamily="Inter, sans-serif" fontSize="7.5" fontWeight="500"
+        fill="rgba(255,255,255,0.58)" letterSpacing="0.22em">
+        LAUNCHPAD
+      </text>
+    </svg>
+  );
+}
+
 const PRICING_FEATURES = [
   { label: "Custom Branded LaunchPad",  s: true,  p: true,  g: true,  c: true  },
   { label: "Up to 5 Sections",          s: true,  p: true,  g: true,  c: true  },
@@ -304,17 +413,22 @@ function LandingPage() {
           font-family: 'Inter', sans-serif; font-size: 1.02rem; color: #374151;
           line-height: 1.82; font-weight: 300;
         }
-        .nsp-what2-checks { display: flex; flex-direction: column; gap: 16px; }
+        .nsp-what2-diagram {
+          display: flex; justify-content: center; align-items: center;
+        }
+        .nsp-what2-checks {
+          display: flex; flex-wrap: wrap; gap: 14px 40px; margin-top: 44px;
+        }
         .nsp-what2-check {
-          display: flex; align-items: flex-start; gap: 14px;
-          font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 500;
+          display: flex; align-items: center; gap: 12px;
+          font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 500;
           color: #1a2744; line-height: 1.4;
         }
         .nsp-what2-check-icon {
-          width: 28px; height: 28px; border-radius: 50%;
+          width: 26px; height: 26px; border-radius: 50%;
           background: rgba(201,168,76,0.12); border: 1.5px solid rgba(201,168,76,0.35);
           display: flex; align-items: center; justify-content: center;
-          color: #c9a84c; font-size: 0.78rem; font-weight: 700; flex-shrink: 0; margin-top: 1px;
+          color: #c9a84c; font-size: 0.72rem; font-weight: 700; flex-shrink: 0;
         }
 
         /* ── PROBLEM ── */
@@ -679,19 +793,22 @@ function LandingPage() {
             <p className="nsp-what2-body">
               A LaunchPad is your single professional destination: the one place you send everyone. Instead of scattering visitors across Instagram, Calendly, your website, and payment links, your LaunchPad organizes everything and guides every visitor toward one clear next step. We build it for you. You own it forever.
             </p>
-            <div className="nsp-what2-checks">
-              {[
-                "Built and designed for you",
-                "Live in 3 business days",
-                "One-time investment",
-                "You own it forever, no monthly fees",
-              ].map(item => (
-                <div key={item} className="nsp-what2-check">
-                  <div className="nsp-what2-check-icon">✓</div>
-                  {item}
-                </div>
-              ))}
+            <div className="nsp-what2-diagram">
+              <LaunchPadDiagram />
             </div>
+          </div>
+          <div className="nsp-what2-checks">
+            {[
+              "Built and designed for you",
+              "Live in 3 business days",
+              "One-time investment",
+              "You own it forever, no monthly fees",
+            ].map(item => (
+              <div key={item} className="nsp-what2-check">
+                <div className="nsp-what2-check-icon">✓</div>
+                {item}
+              </div>
+            ))}
           </div>
         </div>
       </section>
