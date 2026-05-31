@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CoachHub from "./CoachHub";
+import Realtor from "./pages/Realtor";
 
 const C = {
   bg:     "#FAFAF8",
@@ -554,6 +555,17 @@ function LandingPage() {
           margin-top: 60px; align-items: end;
         }
         .nsp-demo-card { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+        .nsp-demo-links {
+          display: flex; gap: 24px; flex-wrap: wrap; justify-content: center;
+          margin-top: 40px;
+        }
+        .nsp-demo-link {
+          font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 600;
+          letter-spacing: 0.06em; color: #c9a84c; text-decoration: none;
+          border: 1px solid rgba(201,168,76,0.35); border-radius: 6px;
+          padding: 10px 22px; transition: border-color 0.18s, color 0.18s;
+        }
+        .nsp-demo-link:hover { border-color: #c9a84c; color: #e8c97a; }
         .nsp-demo-label {
           font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 600;
           letter-spacing: 0.1em; text-transform: uppercase;
@@ -1013,6 +1025,10 @@ function LandingPage() {
             </div>
 
           </div>
+          <div className="nsp-demo-links">
+            <a href="/coach" className="nsp-demo-link">View Coach LaunchPad Demo →</a>
+            <a href="/realtor" className="nsp-demo-link">View Realtor LaunchPad Demo →</a>
+          </div>
         </div>
       </section>
 
@@ -1155,6 +1171,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/coach" element={<CoachHub />} />
+        <Route path="/realtor" element={<Realtor />} />
       </Routes>
     </BrowserRouter>
   );
