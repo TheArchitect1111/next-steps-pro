@@ -57,17 +57,17 @@ function HeroPhone() {
     <PhoneMockup>
       <div style={{ background: "#1a2744", padding: "16px 14px 10px", textAlign: "center" }}>
         <div style={{ width: 36, height: 36, borderRadius: "50%", background: "#c9a84c", margin: "0 auto 8px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <span style={{ fontSize: 12, fontWeight: 700, color: "#1a2744", fontFamily: "Inter, sans-serif" }}>JD</span>
+          <span style={{ fontSize: 12, fontWeight: 700, color: "#1a2744", fontFamily: "Inter, sans-serif" }}>MW</span>
         </div>
-        <div style={{ fontFamily: "Inter, sans-serif", fontSize: 11, fontWeight: 700, color: "#fff", letterSpacing: "0.04em" }}>John Doe</div>
-        <div style={{ fontFamily: "Inter, sans-serif", fontSize: 9, color: "rgba(255,255,255,0.55)", letterSpacing: "0.12em", textTransform: "uppercase", marginTop: 2 }}>Business Consultant</div>
+        <div style={{ fontFamily: "Inter, sans-serif", fontSize: 11, fontWeight: 700, color: "#fff", letterSpacing: "0.04em" }}>Marcus Williams</div>
+        <div style={{ fontFamily: "Inter, sans-serif", fontSize: 9, color: "rgba(255,255,255,0.55)", letterSpacing: "0.12em", textTransform: "uppercase", marginTop: 2 }}>Executive Coach</div>
       </div>
       <div style={{ padding: "14px 12px", flex: 1 }}>
         {[
-          { label: "Book a Call", gold: true },
-          { label: "Free Consultation", gold: false },
-          { label: "View Services", gold: false },
+          { label: "Book a Strategy Call", gold: true },
+          { label: "View Programs", gold: false },
           { label: "Success Stories", gold: false },
+          { label: "Free Resource", gold: false },
         ].map(({ label, gold }) => (
           <div key={label} style={{
             background: gold ? "#c9a84c" : "#f4f6fb",
@@ -84,7 +84,7 @@ function HeroPhone() {
         ))}
         <div style={{ height: 1, background: "#e5e7eb", margin: "12px 0 10px" }} />
         <div style={{ fontFamily: "Inter, sans-serif", fontSize: 9, color: "#6b7280", textAlign: "center", lineHeight: 1.6 }}>
-          Helping Clients Reach<br />Their Full Potential
+          Helping leaders build<br />systems that scale.
         </div>
       </div>
     </PhoneMockup>
@@ -107,6 +107,71 @@ const PRICING_FEATURES = [
   { label: "Advanced Automation",       s: false, p: false, g: false, c: true  },
   { label: "Custom Workflows",          s: false, p: false, g: false, c: true  },
   { label: "30-Day Support",            s: false, p: false, g: false, c: true  },
+];
+
+const WHO_ITEMS = [
+  { label: "Coaches", svg: (
+    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#1a2744" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="15" cy="9" r="4.5"/>
+      <path d="M5 28c0-5.5 4.5-10 10-10s10 4.5 10 10"/>
+    </svg>
+  )},
+  { label: "Consultants", svg: (
+    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#1a2744" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="11" width="24" height="16" rx="2"/>
+      <path d="M10 11V8.5A2.5 2.5 0 0112.5 6h5A2.5 2.5 0 0120 8.5V11"/>
+      <line x1="3" y1="19" x2="27" y2="19"/>
+    </svg>
+  )},
+  { label: "Speakers", svg: (
+    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#1a2744" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="11" y="3" width="8" height="13" rx="4"/>
+      <path d="M6 16a9 9 0 0018 0"/>
+      <line x1="15" y1="25" x2="15" y2="29"/>
+      <line x1="11" y1="29" x2="19" y2="29"/>
+    </svg>
+  )},
+  { label: "Realtors", svg: (
+    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#1a2744" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 16L15 4l12 12"/>
+      <path d="M6 13.5V26h7v-6h4v6h7V13.5"/>
+    </svg>
+  )},
+  { label: "Churches", svg: (
+    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#1a2744" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <line x1="15" y1="4" x2="15" y2="26"/>
+      <line x1="9" y1="12" x2="21" y2="12"/>
+    </svg>
+  )},
+  { label: "Athletes", svg: (
+    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#1a2744" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M10 3h10v9a5 5 0 01-10 0V3z"/>
+      <path d="M10 5H5.5v3.5A4.5 4.5 0 0010 13M20 5h4.5v3.5A4.5 4.5 0 0120 13"/>
+      <line x1="15" y1="17" x2="15" y2="22"/>
+      <rect x="9" y="22" width="12" height="3" rx="1.5"/>
+    </svg>
+  )},
+  { label: "Small Businesses", svg: (
+    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#1a2744" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 14l2-7h18l2 7H4z"/>
+      <path d="M4 14v13h22V14"/>
+      <rect x="12" y="18" width="6" height="9"/>
+      <path d="M4 14a4 4 0 008 0M14 14a4 4 0 008 0"/>
+    </svg>
+  )},
+  { label: "Influencers", svg: (
+    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#1a2744" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="9" y="2" width="12" height="22" rx="2"/>
+      <line x1="13" y1="21" x2="17" y2="21"/>
+      <circle cx="15" cy="12" r="3.5"/>
+    </svg>
+  )},
+  { label: "Creatives", svg: (
+    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#1a2744" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 4l5 5L12 23l-8 3 3-8L21 4z"/>
+      <line x1="17" y1="8" x2="22" y2="13"/>
+    </svg>
+  )},
 ];
 
 function LandingPage() {
@@ -353,25 +418,19 @@ function LandingPage() {
         /* ── WHO FOR ── */
         .nsp-who { background: #FAFAF8; padding: 100px 24px; border-top: 1px solid #e5e7eb; }
         .nsp-who-grid {
-          display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 52px;
+          display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 36px; margin-top: 52px;
         }
         .nsp-who-card {
-          background: #ffffff; border: 1px solid #e5e7eb; border-radius: 16px;
-          padding: 28px 20px; text-align: center;
-          transition: box-shadow 0.2s, transform 0.2s; cursor: default;
+          display: flex; flex-direction: column; align-items: center; gap: 10px;
+          padding: 20px 8px; cursor: default; min-width: 72px;
         }
-        .nsp-who-card:hover {
-          box-shadow: 0 8px 32px rgba(26,39,68,0.1); transform: translateY(-2px);
-        }
-        .nsp-who-circle {
-          width: 64px; height: 64px; border-radius: 50%;
-          background: linear-gradient(135deg, rgba(26,39,68,0.07), rgba(26,39,68,0.03));
-          border: 1px solid rgba(26,39,68,0.08); display: flex; align-items: center;
-          justify-content: center; font-size: 1.6rem; margin: 0 auto 16px;
+        .nsp-who-icon {
+          width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;
         }
         .nsp-who-label {
-          font-family: 'Inter', sans-serif; font-size: 0.875rem;
-          font-weight: 600; color: #1a2744; letter-spacing: 0.01em;
+          font-family: 'Inter', sans-serif; font-size: 0.72rem;
+          font-weight: 600; color: #1a2744; letter-spacing: 0.06em;
+          text-align: center; white-space: nowrap; text-transform: uppercase;
         }
 
         /* ── DEMOS ── */
@@ -504,15 +563,17 @@ function LandingPage() {
           color: rgba(255,255,255,0.62); max-width: 460px; margin: 0 auto 48px;
           line-height: 1.75; font-weight: 300; position: relative; z-index: 1;
         }
-        .nsp-trust-badges {
-          display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;
+        .nsp-trust-strip {
+          display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
           margin-top: 56px; position: relative; z-index: 1;
         }
-        .nsp-trust-badge { display: flex; flex-direction: column; align-items: center; gap: 6px; }
-        .nsp-trust-icon { font-size: 1.4rem; }
-        .nsp-trust-label {
-          font-family: 'Inter', sans-serif; font-size: 0.75rem;
-          color: rgba(255,255,255,0.5); font-weight: 400; letter-spacing: 0.04em;
+        .nsp-trust-strip-item {
+          font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 600;
+          color: rgba(255,255,255,0.75); letter-spacing: 0.14em; text-transform: uppercase;
+          padding: 4px 28px;
+        }
+        .nsp-trust-strip-divider {
+          width: 1px; height: 14px; background: rgba(201,168,76,0.55); flex-shrink: 0;
         }
 
         /* ── FOOTER ── */
@@ -528,16 +589,15 @@ function LandingPage() {
           .nsp-what2-grid { grid-template-columns: 1fr; gap: 36px; }
           .nsp-ba-grid { grid-template-columns: 1fr; }
           .nsp-diff-cols { grid-template-columns: 1fr; }
-          .nsp-who-grid { grid-template-columns: repeat(2, 1fr); }
           .nsp-demos-grid { grid-template-columns: repeat(2, 1fr); }
           .nsp-steps { grid-template-columns: repeat(2, 1fr); }
           .nsp-step-connector { display: none; }
         }
         @media (max-width: 640px) {
-          .nsp-who-grid { grid-template-columns: repeat(2, 1fr); }
+          .nsp-who-grid { gap: 8px 24px; }
           .nsp-demos-grid { grid-template-columns: 1fr; max-width: 240px; margin-left: auto; margin-right: auto; }
           .nsp-steps { grid-template-columns: 1fr; }
-          .nsp-trust-badges { gap: 20px; }
+          .nsp-trust-strip-item { padding: 4px 16px; font-size: 0.66rem; }
           .nsp-diff-checks { gap: 12px; }
         }
       `;
@@ -589,17 +649,17 @@ function LandingPage() {
               Give them one place to go.
             </h1>
             <p className="nsp-hero-subhead">
-              We build a single professional page for your business — done for you, in 3 days, you own it forever. No monthly fees.
+              We build a single professional page for your business. Done for you in 3 days. You own it forever. No monthly fees.
             </p>
             <p className="nsp-hero-explain">
-              A LaunchPad is your single professional destination — the one place you send everyone. Instead of scattering visitors across Instagram, Calendly, your website, and payment links, your LaunchPad organizes everything and guides every visitor toward one clear next step.
+              A LaunchPad is your single professional destination: the one place you send everyone. Instead of scattering visitors across Instagram, Calendly, your website, and payment links, your LaunchPad organizes everything and guides every visitor toward one clear next step.
             </p>
             <div className="nsp-hero-btns">
               <button className="nsp-btn-gold" onClick={() => scroll("pricing")}>
                 See Pricing
               </button>
-              <a href="mailto:hello@nextstepspro.com?subject=Get Started — Starter Package" className="nsp-btn-ghost">
-                Get Started — $497 →
+              <a href="mailto:hello@nextstepspro.com?subject=Get Started: Starter Package" className="nsp-btn-ghost">
+                Get Started for $497 →
               </a>
             </div>
           </div>
@@ -617,14 +677,14 @@ function LandingPage() {
           <h2 className="nsp-section-title">One Page. Every Visitor. One Clear Next Step.</h2>
           <div className="nsp-what2-grid">
             <p className="nsp-what2-body">
-              A LaunchPad is your single professional destination — the one place you send everyone. Instead of scattering visitors across Instagram, Calendly, your website, and payment links, your LaunchPad organizes everything and guides every visitor toward one clear next step. We build it for you. You own it forever.
+              A LaunchPad is your single professional destination: the one place you send everyone. Instead of scattering visitors across Instagram, Calendly, your website, and payment links, your LaunchPad organizes everything and guides every visitor toward one clear next step. We build it for you. You own it forever.
             </p>
             <div className="nsp-what2-checks">
               {[
                 "Built and designed for you",
                 "Live in 3 business days",
                 "One-time investment",
-                "You own it forever — no monthly fees",
+                "You own it forever, no monthly fees",
               ].map(item => (
                 <div key={item} className="nsp-what2-check">
                   <div className="nsp-what2-check-icon">✓</div>
@@ -748,20 +808,11 @@ function LandingPage() {
       <section className="nsp-who" id="who">
         <div className="nsp-inner">
           <div className="nsp-eyebrow">Who This Is For</div>
-          <h2 className="nsp-section-title">Built for people who are serious about their audience.</h2>
+          <h2 className="nsp-section-title">Built For Professionals Who Lead.</h2>
           <div className="nsp-who-grid">
-            {[
-              { icon: "🎯", label: "Coaches" },
-              { icon: "💼", label: "Consultants" },
-              { icon: "🎤", label: "Speakers" },
-              { icon: "🏡", label: "Realtors" },
-              { icon: "⛪", label: "Churches" },
-              { icon: "🏆", label: "Athletes" },
-              { icon: "🏪", label: "Small Businesses" },
-              { icon: "🎨", label: "Creatives" },
-            ].map(({ icon, label }) => (
+            {WHO_ITEMS.map(({ label, svg }) => (
               <div key={label} className="nsp-who-card">
-                <div className="nsp-who-circle">{icon}</div>
+                <div className="nsp-who-icon">{svg}</div>
                 <div className="nsp-who-label">{label}</div>
               </div>
             ))}
@@ -791,7 +842,7 @@ function LandingPage() {
                   <div className="dp-btn-light">View Programs</div>
                   <div className="dp-btn-light">Free Resource</div>
                   <div className="dp-divider" />
-                  <div className="dp-text">Helping ambitious people stop drifting and start building.</div>
+                  <div className="dp-text">Clarity for driven professionals.</div>
                 </div>
               </PhoneMockup>
               <div className="nsp-demo-label">Life Coach</div>
@@ -806,13 +857,10 @@ function LandingPage() {
                 </div>
                 <div className="dp-body">
                   <div className="dp-btn-gold">Get a Free Home Valuation</div>
-                  <div className="dp-btn-light">Search Listings</div>
+                  <div className="dp-btn-light">View Listings</div>
                   <div className="dp-btn-light">First-Time Buyer Guide</div>
                   <div className="dp-divider" />
-                  <div className="dp-stat">
-                    <div className="dp-stat-num">47</div>
-                    <div className="dp-stat-label">Homes Sold This Year</div>
-                  </div>
+                  <div className="dp-text">Your next home starts here.</div>
                 </div>
               </PhoneMockup>
               <div className="nsp-demo-label">Realtor</div>
@@ -839,19 +887,19 @@ function LandingPage() {
             <div className="nsp-demo-card">
               <PhoneMockup dark>
                 <div className="dp-header">
-                  <div className="dp-avatar" style={{ background: "#0f766e" }}>KL</div>
-                  <div className="dp-name">Kim Lee</div>
-                  <div className="dp-role">Business Consultant</div>
+                  <div className="dp-avatar" style={{ background: "#7c5c2e" }}>DK</div>
+                  <div className="dp-name">Pastor David King</div>
+                  <div className="dp-role">Faith Community</div>
                 </div>
                 <div className="dp-body">
-                  <div className="dp-btn-gold">Start Your Audit</div>
-                  <div className="dp-btn-light">See Case Studies</div>
-                  <div className="dp-btn-light">Download the Guide</div>
+                  <div className="dp-btn-gold">Join Our Community</div>
+                  <div className="dp-btn-light">Watch This Week</div>
+                  <div className="dp-btn-light">Give Online</div>
                   <div className="dp-divider" />
-                  <div className="dp-text">Strategy that moves the number that matters.</div>
+                  <div className="dp-text">Everyone is welcome here.</div>
                 </div>
               </PhoneMockup>
-              <div className="nsp-demo-label">Consultant</div>
+              <div className="nsp-demo-label">Faith Community</div>
             </div>
 
           </div>
@@ -870,7 +918,7 @@ function LandingPage() {
             {[
               { n: "01", title: "Discovery Call", desc: "We spend 30 minutes understanding your audience, your offer, and the one next step you want visitors to take." },
               { n: "02", title: "Strategy & Design", desc: "We map your visitor journey and design a LaunchPad that directs attention where it matters most." },
-              { n: "03", title: "Build & Integrate", desc: "We build your LaunchPad with all integrations — Calendly, Stripe, email capture — wired up and tested." },
+              { n: "03", title: "Build & Integrate", desc: "We build your LaunchPad with all integrations: Calendly, Stripe, and email capture, all wired up and tested." },
               { n: "04", title: "Launch", desc: "You review, we refine, and your LaunchPad goes live. Starter builds in 3 days. Growth builds in 7 to 14." },
             ].map(({ n, title, desc }, i) => (
               <div key={n} className="nsp-step">
@@ -923,10 +971,10 @@ function LandingPage() {
                 {PRICING_FEATURES.map(({ label, s, p, g, c }) => (
                   <tr key={label}>
                     <td>{label}</td>
-                    <td>{s ? <span className="nsp-check">✓</span> : <span className="nsp-dash">—</span>}</td>
-                    <td className="td-pro">{p ? <span className="nsp-check">✓</span> : <span className="nsp-dash">—</span>}</td>
-                    <td>{g ? <span className="nsp-check">✓</span> : <span className="nsp-dash">—</span>}</td>
-                    <td>{c ? <span className="nsp-check">✓</span> : <span className="nsp-dash">—</span>}</td>
+                    <td>{s ? <span className="nsp-check">✓</span> : <span className="nsp-dash">·</span>}</td>
+                    <td className="td-pro">{p ? <span className="nsp-check">✓</span> : <span className="nsp-dash">·</span>}</td>
+                    <td>{g ? <span className="nsp-check">✓</span> : <span className="nsp-dash">·</span>}</td>
+                    <td>{c ? <span className="nsp-check">✓</span> : <span className="nsp-dash">·</span>}</td>
                   </tr>
                 ))}
               </tbody>
@@ -957,23 +1005,19 @@ function LandingPage() {
             One destination.<br />Every next step.
           </h2>
           <p className="nsp-final-sub">
-            Stop sending people everywhere and hoping they figure it out. Give them a LaunchPad — and a reason to act.
+            Stop sending people everywhere and hoping they figure it out. Give them a LaunchPad and a clear reason to act.
           </p>
           <a href="mailto:hello@nextstepspro.com" className="nsp-btn-gold">
             Build My LaunchPad →
           </a>
-          <div className="nsp-trust-badges">
-            {[
-              { icon: "⚡", label: "Fast Delivery" },
-              { icon: "🎨", label: "Custom Design" },
-              { icon: "🔗", label: "Full Integration" },
-              { icon: "📱", label: "Mobile First" },
-            ].map(({ icon, label }) => (
-              <div key={label} className="nsp-trust-badge">
-                <span className="nsp-trust-icon">{icon}</span>
-                <span className="nsp-trust-label">{label}</span>
-              </div>
-            ))}
+          <div className="nsp-trust-strip">
+            <span className="nsp-trust-strip-item">Fast Delivery</span>
+            <span className="nsp-trust-strip-divider" />
+            <span className="nsp-trust-strip-item">Custom Design</span>
+            <span className="nsp-trust-strip-divider" />
+            <span className="nsp-trust-strip-item">Full Integration</span>
+            <span className="nsp-trust-strip-divider" />
+            <span className="nsp-trust-strip-item">Mobile First</span>
           </div>
         </div>
       </section>
