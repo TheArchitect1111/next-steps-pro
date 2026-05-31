@@ -101,7 +101,7 @@ function LaunchPadDiagram() {
     { name: "Instagram", fill: "#E1306C", deg: -90  },
     { name: "YouTube",   fill: "#FF0000", deg: -45  },
     { name: "LinkedIn",  fill: "#0077B5", deg: 0    },
-    { name: "Stripe",    fill: "#6772E5", deg: 45   },
+    { name: "Stripe",    fill: "#635BFF", deg: 45   },
     { name: "Calendly",  fill: "#006BFF", deg: 90   },
     { name: "Website",   fill: "#1a2744", deg: 135  },
     { name: "Facebook",  fill: "#1877F2", deg: 180  },
@@ -186,7 +186,7 @@ function LaunchPadDiagram() {
 
       {/* Center: logo */}
       <image href="/nextstepspro-logo.png"
-        x={cx - 30} y={cy - 30} width="60" height="60"
+        x={cx - 40} y={cy - 20} width="80" height="40"
         clipPath="url(#lpd-logo-clip)"
         preserveAspectRatio="xMidYMid meet"/>
     </svg>
@@ -756,7 +756,7 @@ function LandingPage() {
               Give them one place to go.
             </h1>
             <p className="nsp-hero-subhead">
-              We build a single professional page for your business. Done for you in 3 days. You own it forever. No monthly fees.
+              We build a single professional page for your business, done for you in 3 days. You own it forever. No monthly fees.
             </p>
             <p className="nsp-hero-explain">
               A LaunchPad is your single professional destination: the one place you send everyone. Instead of scattering visitors across Instagram, Calendly, your website, and payment links, your LaunchPad organizes everything and guides every visitor toward one clear next step.
@@ -784,7 +784,7 @@ function LandingPage() {
           <h2 className="nsp-section-title">One Page. Every Visitor. One Clear Next Step.</h2>
           <div className="nsp-what2-grid">
             <p className="nsp-what2-body">
-              A LaunchPad is your single professional destination: the one place you send everyone. Instead of scattering visitors across Instagram, Calendly, your website, and payment links, your LaunchPad organizes everything and guides every visitor toward one clear next step. We build it for you. You own it forever.
+              Most professionals are sending people to five different places and losing them at every turn. Your LaunchPad changes that. One link. One destination. One next step. Every time.
             </p>
             <div className="nsp-what2-diagram">
               <LaunchPadDiagram />
@@ -857,7 +857,7 @@ function LandingPage() {
             <div className="nsp-diff-left">
               <div className="nsp-diff-left-h">Most Platforms Rent You A Page.</div>
               <p className="nsp-diff-left-p">
-                Tools like Linktree and Beacons charge monthly fees to access features you never truly own. NextStepsPro LaunchPad builds a customized page for your business designed around your goals, your brand, and your next step strategy.
+                Linktree, Beacons, and similar platforms charge $8 to $24 per month, every month, forever. That adds up to $96 to $288 per year for a page you never truly own. NextStepsPro builds a fully customized LaunchPad for a single one-time investment starting at $497. No subscriptions. No recurring fees. Yours forever.
               </p>
               <p className="nsp-diff-examples">Linktree, Beacons, Stan Store, and similar tools</p>
               {[
