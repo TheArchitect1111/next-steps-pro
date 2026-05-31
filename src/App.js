@@ -130,44 +130,27 @@ function LaunchPadDiagram() {
       );
       case "LinkedIn": return (
         <text textAnchor="middle" dominantBaseline="central" x="0" y="0"
-          fontFamily="Arial,sans-serif" fontSize="18" fontWeight="900" fill="white">in</text>
+          fontFamily="Arial,sans-serif" fontSize="14" fontWeight="900" fill="white">in</text>
       );
       case "Stripe": return (
         <text textAnchor="middle" dominantBaseline="central" x="0" y="0"
-          fontFamily="Arial,sans-serif" fontSize="22" fontWeight="900" fill="white">S</text>
+          fontFamily="Arial,sans-serif" fontSize="14" fontWeight="900" fill="white">S</text>
       );
       case "Calendly": return (
-        <g>
-          <rect x="-9" y="-7" width="18" height="16" rx="2.5" stroke="white" strokeWidth="1.5" fill="none"/>
-          <line x1="-9" y1="-1.5" x2="9" y2="-1.5" stroke="white" strokeWidth="1.2"/>
-          <line x1="-5" y1="-9.5" x2="-5" y2="-5" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-          <line x1="5" y1="-9.5" x2="5" y2="-5" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-          <circle cx="-4" cy="3" r="1.2" fill="white"/>
-          <circle cx="0" cy="3" r="1.2" fill="white"/>
-          <circle cx="4" cy="3" r="1.2" fill="white"/>
-          <circle cx="-4" cy="7" r="1.2" fill="white"/>
-          <circle cx="0" cy="7" r="1.2" fill="white"/>
-        </g>
+        <text textAnchor="middle" dominantBaseline="central" x="0" y="0"
+          fontFamily="Arial,sans-serif" fontSize="18" fill="white">▦</text>
       );
       case "Website": return (
-        <g>
-          <circle cx="0" cy="0" r="10" stroke="white" strokeWidth="1.5" fill="none"/>
-          <line x1="0" y1="-10" x2="0" y2="10" stroke="white" strokeWidth="1.2"/>
-          <line x1="-10" y1="0" x2="10" y2="0" stroke="white" strokeWidth="1.2"/>
-          <path d="M-9,-4.5 C-4,-7 4,-7 9,-4.5" stroke="white" strokeWidth="1.2" fill="none"/>
-          <path d="M-9,4.5 C-4,7 4,7 9,4.5" stroke="white" strokeWidth="1.2" fill="none"/>
-        </g>
+        <text textAnchor="middle" dominantBaseline="central" x="0" y="0"
+          fontFamily="Arial,sans-serif" fontSize="20" fill="white">⊕</text>
       );
       case "Facebook": return (
         <text textAnchor="middle" dominantBaseline="central" x="1" y="1"
-          fontFamily="Arial,sans-serif" fontSize="22" fontWeight="900" fill="white">f</text>
+          fontFamily="Arial,sans-serif" fontSize="16" fontWeight="900" fill="white">f</text>
       );
       case "TikTok": return (
-        <g>
-          <ellipse cx="-1" cy="6" rx="4" ry="2.5" fill="white" transform="rotate(-20,-1,6)"/>
-          <line x1="3" y1="5" x2="3" y2="-8" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-          <path d="M3,-8 C6,-10 9,-7 7,-4" stroke="white" strokeWidth="1.8" fill="none" strokeLinecap="round"/>
-        </g>
+        <text textAnchor="middle" dominantBaseline="central" x="0" y="0"
+          fontFamily="Arial,sans-serif" fontSize="18" fill="white">♪</text>
       );
       default: return null;
     }
