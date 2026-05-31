@@ -564,7 +564,9 @@ function LandingPage() {
       {/* ── NAV ── */}
       <nav className="nsp-nav">
         <div className="nsp-nav-inner">
-          <a href="/" className="nsp-nav-logo">Next Steps Pro</a>
+          <a href="/" className="nsp-nav-logo">
+            <img src="/nextstepspro-logo.png" alt="NextStepsPro" style={{height: '40px', objectFit: 'contain', mixBlendMode: 'multiply'}} />
+          </a>
           <ul className="nsp-nav-links" style={{ display: window.innerWidth < 640 ? "none" : "flex" }}>
             <li><a href="#demos" onClick={e => { e.preventDefault(); scroll("demos"); }}>Live Demos</a></li>
             <li><a href="#how" onClick={e => { e.preventDefault(); scroll("how"); }}>How It Works</a></li>
@@ -578,6 +580,9 @@ function LandingPage() {
       <section className="nsp-hero" id="hero">
         <div className="nsp-hero-inner">
           <div>
+            <div style={{marginBottom: 28}}>
+              <img src="/nextstepspro-logo.png" alt="NextStepsPro" style={{maxWidth: 280, height: 'auto', display: 'block', mixBlendMode: 'multiply'}} />
+            </div>
             <div className="nsp-hero-eyebrow">LaunchPad. One Journey. One Next Step.</div>
             <h1 className="nsp-hero-h1">
               Your audience is ready.<br />
@@ -975,8 +980,8 @@ function LandingPage() {
 
       {/* ── FOOTER ── */}
       <footer className="nsp-footer">
-        <div style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "1.25rem", color: "#ffffff", fontWeight: 700, marginBottom: 8 }}>
-          Next Steps Pro
+        <div style={{ display: 'inline-block', background: '#ffffff', borderRadius: 8, padding: '6px 14px', marginBottom: 8 }}>
+          <img src="/nextstepspro-logo.png" alt="NextStepsPro" style={{height: 36, objectFit: 'contain', display: 'block'}} />
         </div>
         <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "0.82rem", color: "rgba(255,255,255,0.38)", fontWeight: 300, marginBottom: 16 }}>
           Built to direct. Designed to convert.
