@@ -84,12 +84,30 @@ function HeroPhone() {
         ))}
         <div style={{ height: 1, background: "#e5e7eb", margin: "12px 0 10px" }} />
         <div style={{ fontFamily: "Inter, sans-serif", fontSize: 9, color: "#6b7280", textAlign: "center", lineHeight: 1.6 }}>
-          One destination.<br />Every next step.
+          Helping Clients Reach<br />Their Full Potential
         </div>
       </div>
     </PhoneMockup>
   );
 }
+
+const PRICING_FEATURES = [
+  { label: "Custom Branded Launch Point",  s: true,  p: true,  g: true,  c: true  },
+  { label: "Up to 5 Sections",             s: true,  p: true,  g: true,  c: true  },
+  { label: "Social Links",                 s: true,  p: true,  g: true,  c: true  },
+  { label: "Lead Capture Form",            s: true,  p: true,  g: true,  c: true  },
+  { label: "Mobile Optimization",          s: true,  p: true,  g: true,  c: true  },
+  { label: "3-Day Delivery",               s: true,  p: true,  g: false, c: false },
+  { label: "Custom Copy Assistance",       s: false, p: true,  g: true,  c: true  },
+  { label: "Booking Integration",          s: false, p: true,  g: true,  c: true  },
+  { label: "Stripe Integration",           s: false, p: false, g: true,  c: true  },
+  { label: "Calendly Integration",         s: false, p: false, g: true,  c: true  },
+  { label: "CRM Integration",              s: false, p: false, g: true,  c: true  },
+  { label: "Email Automation",             s: false, p: false, g: true,  c: true  },
+  { label: "Advanced Automation",          s: false, p: false, g: false, c: true  },
+  { label: "Custom Workflows",             s: false, p: false, g: false, c: true  },
+  { label: "30-Day Support",               s: false, p: false, g: false, c: true  },
+];
 
 function LandingPage() {
   useEffect(() => {
@@ -110,336 +128,257 @@ function LandingPage() {
 
         /* ── NAV ── */
         .nsp-nav {
-          position: sticky;
-          top: 0;
-          z-index: 100;
+          position: sticky; top: 0; z-index: 100;
           background: rgba(250,250,248,0.92);
-          backdrop-filter: blur(12px);
-          -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
           border-bottom: 1px solid rgba(26,39,68,0.08);
-          padding: 0 24px;
-          height: 64px;
-          display: flex;
-          align-items: center;
+          padding: 0 24px; height: 64px; display: flex; align-items: center;
         }
         .nsp-nav-inner {
-          max-width: 1100px;
-          width: 100%;
-          margin: 0 auto;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 24px;
+          max-width: 1100px; width: 100%; margin: 0 auto;
+          display: flex; align-items: center; justify-content: space-between; gap: 24px;
         }
         .nsp-nav-logo {
           font-family: 'Playfair Display', Georgia, serif;
-          font-size: 1.2rem;
-          color: #1a2744;
-          font-weight: 700;
-          letter-spacing: 0.01em;
-          text-decoration: none;
-          white-space: nowrap;
+          font-size: 1.2rem; color: #1a2744; font-weight: 700;
+          letter-spacing: 0.01em; text-decoration: none; white-space: nowrap;
         }
-        .nsp-nav-links {
-          display: flex;
-          align-items: center;
-          gap: 36px;
-          list-style: none;
-        }
+        .nsp-nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
         .nsp-nav-links a {
-          font-family: 'Inter', sans-serif;
-          font-size: 0.8rem;
-          font-weight: 500;
-          letter-spacing: 0.05em;
-          color: #6b7280;
-          text-decoration: none;
-          text-transform: uppercase;
-          transition: color 0.15s;
+          font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 500;
+          letter-spacing: 0.05em; color: #6b7280; text-decoration: none;
+          text-transform: uppercase; transition: color 0.15s;
         }
         .nsp-nav-links a:hover { color: #1a2744; }
         .nsp-nav-cta {
-          display: inline-block;
-          background: #1a2744;
-          color: #ffffff;
-          border: none;
-          padding: 10px 24px;
-          font-family: 'Inter', sans-serif;
-          font-size: 0.78rem;
-          font-weight: 600;
-          letter-spacing: 0.07em;
-          text-transform: uppercase;
-          border-radius: 6px;
-          cursor: pointer;
-          text-decoration: none;
-          transition: opacity 0.18s, transform 0.18s;
-          white-space: nowrap;
+          display: inline-block; background: #1a2744; color: #ffffff; border: none;
+          padding: 10px 24px; font-family: 'Inter', sans-serif; font-size: 0.78rem;
+          font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase;
+          border-radius: 6px; cursor: pointer; text-decoration: none;
+          transition: opacity 0.18s, transform 0.18s; white-space: nowrap;
         }
         .nsp-nav-cta:hover { opacity: 0.85; transform: translateY(-1px); }
 
         /* ── HERO ── */
-        .nsp-hero {
-          background: #FAFAF8;
-          padding: 80px 24px 100px;
-          overflow: hidden;
-        }
+        .nsp-hero { background: #FAFAF8; padding: 80px 24px 100px; overflow: hidden; }
         .nsp-hero-inner {
-          max-width: 1100px;
-          margin: 0 auto;
-          display: grid;
-          grid-template-columns: 1fr 420px;
-          gap: 60px;
-          align-items: center;
+          max-width: 1100px; margin: 0 auto;
+          display: grid; grid-template-columns: 1fr 420px; gap: 60px; align-items: center;
         }
         .nsp-hero-eyebrow {
-          font-family: 'Inter', sans-serif;
-          font-size: 0.68rem;
-          letter-spacing: 0.24em;
-          text-transform: uppercase;
-          color: #c9a84c;
-          font-weight: 600;
-          margin-bottom: 20px;
+          font-family: 'Inter', sans-serif; font-size: 0.68rem; letter-spacing: 0.24em;
+          text-transform: uppercase; color: #c9a84c; font-weight: 600; margin-bottom: 20px;
         }
         .nsp-hero-h1 {
           font-family: 'Playfair Display', Georgia, serif;
-          font-size: clamp(2.2rem, 4.5vw, 3.6rem);
-          font-weight: 700;
-          color: #1a2744;
-          line-height: 1.18;
-          margin-bottom: 24px;
+          font-size: clamp(2.2rem, 4.5vw, 3.6rem); font-weight: 700;
+          color: #1a2744; line-height: 1.18; margin-bottom: 20px;
         }
-        .nsp-hero-sub {
-          font-family: 'Inter', sans-serif;
-          font-size: 1.05rem;
-          color: #6b7280;
-          line-height: 1.78;
-          font-weight: 300;
-          margin-bottom: 44px;
-          max-width: 500px;
+        .nsp-hero-explain {
+          font-family: 'Inter', sans-serif; font-size: 1rem;
+          color: #374151; line-height: 1.78; font-weight: 400;
+          margin-bottom: 40px; max-width: 520px;
         }
         .nsp-hero-btns { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
         .nsp-btn-gold {
-          display: inline-block;
-          background: #c9a84c;
-          color: #1a2744;
-          border: none;
-          padding: 15px 36px;
-          font-family: 'Inter', sans-serif;
-          font-size: 0.82rem;
-          font-weight: 700;
-          letter-spacing: 0.09em;
-          text-transform: uppercase;
-          border-radius: 6px;
-          cursor: pointer;
-          text-decoration: none;
+          display: inline-block; background: #c9a84c; color: #1a2744; border: none;
+          padding: 15px 36px; font-family: 'Inter', sans-serif; font-size: 0.82rem;
+          font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase;
+          border-radius: 6px; cursor: pointer; text-decoration: none;
           transition: opacity 0.18s, transform 0.18s;
         }
         .nsp-btn-gold:hover { opacity: 0.87; transform: translateY(-1px); }
         .nsp-btn-ghost {
-          display: inline-block;
-          background: transparent;
-          color: #6b7280;
-          border: none;
-          padding: 15px 4px;
-          font-family: 'Inter', sans-serif;
-          font-size: 0.82rem;
-          font-weight: 500;
-          cursor: pointer;
-          text-decoration: none;
-          transition: color 0.18s;
-          display: flex;
-          align-items: center;
-          gap: 6px;
+          display: inline-flex; align-items: center; gap: 6px;
+          background: transparent; color: #6b7280; border: none;
+          padding: 15px 4px; font-family: 'Inter', sans-serif; font-size: 0.82rem;
+          font-weight: 500; cursor: pointer; text-decoration: none; transition: color 0.18s;
         }
         .nsp-btn-ghost:hover { color: #1a2744; }
         .nsp-hero-phone-wrap {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          position: relative;
+          display: flex; justify-content: center; align-items: center; position: relative;
         }
         .nsp-hero-phone-glow {
-          position: absolute;
-          width: 300px;
-          height: 300px;
-          border-radius: 50%;
+          position: absolute; width: 300px; height: 300px; border-radius: 50%;
           background: radial-gradient(circle, rgba(201,168,76,0.13) 0%, transparent 70%);
           pointer-events: none;
         }
 
-        /* ── PROBLEM ── */
-        .nsp-problem {
-          background: #ffffff;
-          padding: 100px 24px;
-          border-top: 1px solid #e5e7eb;
-          border-bottom: 1px solid #e5e7eb;
-        }
+        /* ── SHARED ── */
         .nsp-inner { max-width: 1100px; margin: 0 auto; }
         .nsp-eyebrow {
-          font-family: 'Inter', sans-serif;
-          font-size: 0.68rem;
-          letter-spacing: 0.24em;
-          text-transform: uppercase;
-          color: #c9a84c;
-          font-weight: 600;
-          margin-bottom: 16px;
+          font-family: 'Inter', sans-serif; font-size: 0.68rem; letter-spacing: 0.24em;
+          text-transform: uppercase; color: #c9a84c; font-weight: 600; margin-bottom: 16px;
         }
         .nsp-section-title {
           font-family: 'Playfair Display', Georgia, serif;
-          font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-          font-weight: 700;
-          color: #1a2744;
-          line-height: 1.22;
-          margin-bottom: 16px;
+          font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 700;
+          color: #1a2744; line-height: 1.22; margin-bottom: 16px;
         }
         .nsp-section-title-white { color: #ffffff; }
         .nsp-section-sub {
-          font-family: 'Inter', sans-serif;
-          font-size: 1rem;
-          color: #6b7280;
-          line-height: 1.75;
-          font-weight: 300;
-          margin-bottom: 60px;
-          max-width: 540px;
+          font-family: 'Inter', sans-serif; font-size: 1rem; color: #6b7280;
+          line-height: 1.75; font-weight: 300; margin-bottom: 60px; max-width: 540px;
         }
-        .nsp-ba-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 24px;
+
+        /* ── PROBLEM ── */
+        .nsp-problem {
+          background: #ffffff; padding: 100px 24px;
+          border-top: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb;
         }
+        .nsp-ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
         .nsp-ba-before {
-          background: #f9fafb;
-          border: 1px solid #e5e7eb;
-          border-radius: 16px;
-          padding: 40px 36px;
+          background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 16px; padding: 40px 36px;
         }
         .nsp-ba-after {
-          background: #1a2744;
-          border-radius: 16px;
-          padding: 40px 36px;
-          position: relative;
-          overflow: hidden;
+          background: #1a2744; border-radius: 16px; padding: 40px 36px;
+          position: relative; overflow: hidden;
         }
         .nsp-ba-after::before {
-          content: '';
-          position: absolute;
-          top: -60px; right: -60px;
-          width: 200px; height: 200px;
-          border-radius: 50%;
+          content: ''; position: absolute; top: -60px; right: -60px;
+          width: 200px; height: 200px; border-radius: 50%;
           background: radial-gradient(circle, rgba(201,168,76,0.1) 0%, transparent 70%);
           pointer-events: none;
         }
         .nsp-ba-label {
-          font-family: 'Inter', sans-serif;
-          font-size: 0.68rem;
-          letter-spacing: 0.2em;
-          text-transform: uppercase;
-          font-weight: 700;
-          margin-bottom: 28px;
+          font-family: 'Inter', sans-serif; font-size: 0.68rem; letter-spacing: 0.2em;
+          text-transform: uppercase; font-weight: 700; margin-bottom: 28px;
         }
         .nsp-ba-item {
-          font-family: 'Inter', sans-serif;
-          font-size: 0.95rem;
-          line-height: 1.6;
-          margin-bottom: 14px;
-          display: flex;
-          align-items: flex-start;
-          gap: 12px;
-          font-weight: 300;
+          font-family: 'Inter', sans-serif; font-size: 0.95rem; line-height: 1.6;
+          margin-bottom: 14px; display: flex; align-items: flex-start; gap: 12px; font-weight: 300;
         }
 
-        /* ── WHO FOR ── */
-        .nsp-who {
-          background: #FAFAF8;
-          padding: 100px 24px;
+        /* ── WHY DIFFERENT ── */
+        .nsp-diff { background: #FAFAF8; padding: 100px 24px; }
+        .nsp-diff-cols {
+          display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 56px;
         }
+        .nsp-diff-left {
+          background: #1a2744; border-radius: 16px; padding: 40px 36px;
+          position: relative; overflow: hidden;
+        }
+        .nsp-diff-left::before {
+          content: ''; position: absolute; top: -80px; right: -80px;
+          width: 240px; height: 240px; border-radius: 50%;
+          background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+          pointer-events: none;
+        }
+        .nsp-diff-left-h {
+          font-family: 'Playfair Display', Georgia, serif; font-size: 1.3rem;
+          font-weight: 700; color: #ffffff; margin-bottom: 16px; line-height: 1.3;
+        }
+        .nsp-diff-left-p {
+          font-family: 'Inter', sans-serif; font-size: 0.9rem; color: rgba(255,255,255,0.65);
+          line-height: 1.75; font-weight: 300; margin-bottom: 28px;
+        }
+        .nsp-diff-point {
+          font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 700;
+          color: #c9a84c; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;
+        }
+        .nsp-diff-point::before {
+          content: ''; width: 4px; height: 4px; border-radius: 50%; background: #c9a84c; flex-shrink: 0;
+        }
+        .nsp-diff-right {
+          background: #ffffff; border: 1px solid #e5e7eb; border-radius: 16px; overflow: hidden;
+        }
+        .nsp-diff-table { width: 100%; border-collapse: collapse; }
+        .nsp-diff-table thead tr {
+          background: #1a2744;
+        }
+        .nsp-diff-table thead th {
+          font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 700;
+          letter-spacing: 0.12em; text-transform: uppercase; padding: 14px 20px; text-align: left;
+        }
+        .nsp-diff-table thead th:first-child { color: rgba(255,255,255,0.55); }
+        .nsp-diff-table thead th:last-child { color: #c9a84c; }
+        .nsp-diff-table tbody tr:nth-child(odd) { background: #f9fafb; }
+        .nsp-diff-table tbody tr:nth-child(even) { background: #ffffff; }
+        .nsp-diff-table tbody td {
+          font-family: 'Inter', sans-serif; font-size: 0.875rem; font-weight: 300;
+          padding: 14px 20px; color: #374151; border-bottom: 1px solid #e5e7eb;
+        }
+        .nsp-diff-table tbody td:last-child { font-weight: 500; color: #1a2744; }
+        .nsp-diff-banner {
+          margin-top: 28px;
+          background: linear-gradient(135deg, #1a2744 0%, #243058 100%);
+          border-radius: 14px; padding: 28px 36px;
+        }
+        .nsp-diff-banner-h {
+          font-family: 'Playfair Display', Georgia, serif; font-style: italic;
+          font-size: clamp(1rem, 2vw, 1.3rem); color: #c9a84c;
+          font-weight: 400; margin-bottom: 20px; line-height: 1.5;
+        }
+        .nsp-diff-checks {
+          display: flex; flex-wrap: wrap; gap: 20px;
+        }
+        .nsp-diff-check {
+          display: flex; align-items: center; gap: 8px;
+          font-family: 'Inter', sans-serif; font-size: 0.82rem; font-weight: 500;
+          color: rgba(255,255,255,0.88);
+        }
+        .nsp-diff-check-icon { color: #c9a84c; font-size: 0.9rem; flex-shrink: 0; }
+
+        /* ── WHO FOR ── */
+        .nsp-who { background: #ffffff; padding: 100px 24px; border-top: 1px solid #e5e7eb; }
         .nsp-who-grid {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 16px;
-          margin-top: 52px;
+          display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 52px;
         }
         .nsp-who-card {
-          background: #ffffff;
-          border: 1px solid #e5e7eb;
-          border-radius: 16px;
-          padding: 28px 20px;
-          text-align: center;
-          transition: box-shadow 0.2s, transform 0.2s;
-          cursor: default;
+          background: #FAFAF8; border: 1px solid #e5e7eb; border-radius: 16px;
+          padding: 28px 20px; text-align: center;
+          transition: box-shadow 0.2s, transform 0.2s; cursor: default;
         }
         .nsp-who-card:hover {
-          box-shadow: 0 8px 32px rgba(26,39,68,0.1);
-          transform: translateY(-2px);
+          box-shadow: 0 8px 32px rgba(26,39,68,0.1); transform: translateY(-2px);
         }
         .nsp-who-circle {
-          width: 64px;
-          height: 64px;
-          border-radius: 50%;
+          width: 64px; height: 64px; border-radius: 50%;
           background: linear-gradient(135deg, rgba(26,39,68,0.07), rgba(26,39,68,0.03));
-          border: 1px solid rgba(26,39,68,0.08);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 1.6rem;
-          margin: 0 auto 16px;
+          border: 1px solid rgba(26,39,68,0.08); display: flex; align-items: center;
+          justify-content: center; font-size: 1.6rem; margin: 0 auto 16px;
         }
         .nsp-who-label {
-          font-family: 'Inter', sans-serif;
-          font-size: 0.875rem;
-          font-weight: 600;
-          color: #1a2744;
-          letter-spacing: 0.01em;
+          font-family: 'Inter', sans-serif; font-size: 0.875rem;
+          font-weight: 600; color: #1a2744; letter-spacing: 0.01em;
+        }
+
+        /* ── WHAT IS A LAUNCH POINT ── */
+        .nsp-what { background: #1a2744; padding: 88px 24px; text-align: center; position: relative; overflow: hidden; }
+        .nsp-what::before {
+          content: ''; position: absolute; inset: 0;
+          background: radial-gradient(ellipse at 50% 50%, rgba(201,168,76,0.08) 0%, transparent 65%);
+          pointer-events: none;
+        }
+        .nsp-what-body {
+          font-family: 'Inter', sans-serif; font-size: 1.05rem; color: rgba(255,255,255,0.7);
+          line-height: 1.82; font-weight: 300; max-width: 660px; margin: 0 auto;
+          position: relative; z-index: 1;
         }
 
         /* ── DEMOS ── */
         .nsp-demos {
-          background: #1a2744;
-          padding: 100px 24px;
-          position: relative;
-          overflow: hidden;
+          background: #111d35; padding: 100px 24px; position: relative; overflow: hidden;
         }
         .nsp-demos::before {
-          content: '';
-          position: absolute;
-          inset: 0;
+          content: ''; position: absolute; inset: 0;
           background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.06) 0%, transparent 65%);
           pointer-events: none;
         }
         .nsp-demos-grid {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 24px;
-          margin-top: 60px;
-          align-items: end;
+          display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+          margin-top: 60px; align-items: end;
         }
-        .nsp-demo-card {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 16px;
-        }
+        .nsp-demo-card { display: flex; flex-direction: column; align-items: center; gap: 16px; }
         .nsp-demo-label {
-          font-family: 'Inter', sans-serif;
-          font-size: 0.75rem;
-          font-weight: 600;
-          letter-spacing: 0.1em;
-          text-transform: uppercase;
-          color: rgba(255,255,255,0.55);
-          text-align: center;
-          margin-top: 8px;
+          font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 600;
+          letter-spacing: 0.1em; text-transform: uppercase;
+          color: rgba(255,255,255,0.55); text-align: center; margin-top: 8px;
         }
-
-        /* Demo phone content */
-        .dp-header {
-          background: #1a2744;
-          padding: 10px 10px 8px;
-          text-align: center;
-        }
+        .dp-header { background: #1a2744; padding: 10px 10px 8px; text-align: center; }
         .dp-avatar {
-          width: 32px; height: 32px; border-radius: 50%;
-          background: #c9a84c;
-          margin: 0 auto 6px;
-          display: flex; align-items: center; justify-content: center;
+          width: 32px; height: 32px; border-radius: 50%; background: #c9a84c;
+          margin: 0 auto 6px; display: flex; align-items: center; justify-content: center;
           font-size: 10px; font-weight: 700; color: #1a2744; font-family: Inter, sans-serif;
         }
         .dp-name { font-family: Inter, sans-serif; font-size: 9px; font-weight: 700; color: #fff; letter-spacing: 0.04em; }
@@ -449,245 +388,118 @@ function LandingPage() {
         .dp-btn-light { background: #f4f6fb; border-radius: 6px; padding: 7px 10px; font-family: Inter, sans-serif; font-size: 8.5px; font-weight: 500; color: #374151; text-align: center; margin-bottom: 6px; }
         .dp-divider { height: 1px; background: #e5e7eb; margin: 8px 0; }
         .dp-text { font-family: Inter, sans-serif; font-size: 7.5px; color: #6b7280; text-align: center; line-height: 1.5; }
-        .dp-product { background: #f4f6fb; border-radius: 8px; padding: 8px; margin-bottom: 6px; }
-        .dp-product-name { font-family: Inter, sans-serif; font-size: 8px; font-weight: 600; color: #1a2744; margin-bottom: 2px; }
-        .dp-product-price { font-family: Inter, sans-serif; font-size: 8px; color: #c9a84c; font-weight: 700; }
         .dp-stat { text-align: center; padding: 6px; }
         .dp-stat-num { font-family: Inter, sans-serif; font-size: 14px; font-weight: 700; color: #1a2744; }
         .dp-stat-label { font-family: Inter, sans-serif; font-size: 7px; color: #6b7280; margin-top: 2px; }
 
         /* ── HOW IT WORKS ── */
-        .nsp-how {
-          background: #ffffff;
-          padding: 100px 24px;
-          border-top: 1px solid #e5e7eb;
-        }
+        .nsp-how { background: #ffffff; padding: 100px 24px; border-top: 1px solid #e5e7eb; }
         .nsp-steps {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 32px;
-          margin-top: 60px;
+          display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-top: 60px;
         }
-        .nsp-step {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          position: relative;
-        }
+        .nsp-step { display: flex; flex-direction: column; align-items: flex-start; position: relative; }
         .nsp-step-num {
-          width: 44px;
-          height: 44px;
-          border-radius: 12px;
+          width: 44px; height: 44px; border-radius: 12px;
           background: linear-gradient(135deg, #1a2744, #243058);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-family: 'Playfair Display', Georgia, serif;
-          font-size: 1rem;
-          font-weight: 700;
-          color: #c9a84c;
-          margin-bottom: 20px;
-          flex-shrink: 0;
+          display: flex; align-items: center; justify-content: center;
+          font-family: 'Playfair Display', Georgia, serif; font-size: 1rem;
+          font-weight: 700; color: #c9a84c; margin-bottom: 20px; flex-shrink: 0;
         }
         .nsp-step-title {
-          font-family: 'Playfair Display', Georgia, serif;
-          font-size: 1.15rem;
-          font-weight: 700;
-          color: #1a2744;
-          margin-bottom: 10px;
-          line-height: 1.3;
+          font-family: 'Playfair Display', Georgia, serif; font-size: 1.15rem;
+          font-weight: 700; color: #1a2744; margin-bottom: 10px; line-height: 1.3;
         }
         .nsp-step-desc {
-          font-family: 'Inter', sans-serif;
-          font-size: 0.875rem;
-          color: #6b7280;
-          line-height: 1.72;
-          font-weight: 300;
+          font-family: 'Inter', sans-serif; font-size: 0.875rem;
+          color: #6b7280; line-height: 1.72; font-weight: 300;
         }
         .nsp-step-connector {
-          position: absolute;
-          top: 22px;
-          right: -16px;
-          width: 32px;
-          height: 1px;
+          position: absolute; top: 22px; right: -16px; width: 32px; height: 1px;
           background: linear-gradient(90deg, #c9a84c, rgba(201,168,76,0.2));
         }
 
         /* ── PRICING ── */
-        .nsp-pricing {
-          background: #FAFAF8;
-          padding: 100px 24px;
+        .nsp-pricing { background: #FAFAF8; padding: 100px 24px; }
+        .nsp-compare-wrap { margin-top: 52px; overflow-x: auto; }
+        .nsp-compare-table { width: 100%; border-collapse: collapse; min-width: 640px; }
+        .nsp-compare-table thead tr { background: #1a2744; }
+        .nsp-compare-table thead th {
+          font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 700;
+          letter-spacing: 0.08em; text-transform: uppercase; padding: 18px 20px;
+          text-align: center; color: rgba(255,255,255,0.6); white-space: nowrap;
         }
-        .nsp-pricing-grid {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 24px;
-          margin-top: 60px;
-          align-items: start;
+        .nsp-compare-table thead th:first-child { text-align: left; color: rgba(255,255,255,0.45); }
+        .nsp-compare-table thead th.th-pro { color: #c9a84c; border-left: 2px solid #c9a84c; border-right: 2px solid #c9a84c; position: relative; }
+        .nsp-compare-badge {
+          display: block; font-size: 0.58rem; letter-spacing: 0.14em; color: #c9a84c;
+          margin-top: 4px; font-weight: 700;
         }
-        .nsp-price-card {
-          background: #ffffff;
-          border: 1px solid #e5e7eb;
-          border-radius: 18px;
-          padding: 40px 32px;
-          display: flex;
-          flex-direction: column;
-          box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+        .nsp-compare-table thead th.th-price {
+          display: block; font-family: 'Playfair Display', Georgia, serif;
+          font-size: 1.1rem; font-weight: 700; color: #ffffff; letter-spacing: 0;
+          text-transform: none; margin-top: 2px;
         }
-        .nsp-price-card-pro {
-          border: 2px solid #c9a84c;
-          box-shadow: 0 12px 48px rgba(201,168,76,0.14);
-          position: relative;
-          transform: translateY(-6px);
+        .nsp-compare-table tbody tr:nth-child(odd) { background: #ffffff; }
+        .nsp-compare-table tbody tr:nth-child(even) { background: #f9fafb; }
+        .nsp-compare-table tbody td {
+          font-family: 'Inter', sans-serif; font-size: 0.875rem; font-weight: 300;
+          padding: 13px 20px; color: #374151; text-align: center;
+          border-bottom: 1px solid #e5e7eb;
         }
-        .nsp-price-badge {
-          position: absolute;
-          top: -13px;
-          left: 50%;
-          transform: translateX(-50%);
-          background: #c9a84c;
-          color: #1a2744;
-          font-family: 'Inter', sans-serif;
-          font-size: 0.63rem;
-          font-weight: 700;
-          letter-spacing: 0.14em;
-          text-transform: uppercase;
-          padding: 4px 16px;
-          border-radius: 20px;
-          white-space: nowrap;
+        .nsp-compare-table tbody td:first-child { text-align: left; font-weight: 400; color: #1a2744; }
+        .nsp-compare-table tbody td.td-pro { border-left: 2px solid #c9a84c; border-right: 2px solid #c9a84c; }
+        .nsp-compare-table tbody tr:last-child td.td-pro { border-bottom: 2px solid #c9a84c; }
+        .nsp-check { color: #c9a84c; font-size: 1rem; font-weight: 700; }
+        .nsp-dash { color: #d1d5db; font-size: 1.1rem; }
+        .nsp-compare-btns {
+          display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 12px; margin-top: 24px; min-width: 640px;
         }
-        .nsp-price-tier {
-          font-family: 'Inter', sans-serif;
-          font-size: 0.68rem;
-          letter-spacing: 0.2em;
-          text-transform: uppercase;
-          color: #c9a84c;
-          font-weight: 700;
-          margin-bottom: 10px;
-        }
-        .nsp-price-amount {
-          font-family: 'Playfair Display', Georgia, serif;
-          font-size: 2.4rem;
-          color: #1a2744;
-          font-weight: 700;
-          margin-bottom: 8px;
-          line-height: 1;
-        }
-        .nsp-price-note {
-          font-family: 'Inter', sans-serif;
-          font-size: 0.82rem;
-          color: #6b7280;
-          font-weight: 300;
-          margin-bottom: 24px;
-          line-height: 1.5;
-        }
-        .nsp-price-divider { height: 1px; background: #e5e7eb; margin-bottom: 24px; }
-        .nsp-price-feature {
-          display: flex;
-          align-items: flex-start;
-          gap: 10px;
-          margin-bottom: 12px;
-          font-family: 'Inter', sans-serif;
-          font-size: 0.875rem;
-          color: #374151;
-          line-height: 1.5;
-          font-weight: 300;
-        }
-        .nsp-price-dot {
-          width: 5px; height: 5px;
-          border-radius: 50%;
-          background: #c9a84c;
-          flex-shrink: 0;
-          margin-top: 7px;
-        }
-        .nsp-price-btn {
-          display: block;
-          text-align: center;
-          padding: 14px 24px;
-          border-radius: 8px;
-          font-family: 'Inter', sans-serif;
-          font-size: 0.8rem;
-          font-weight: 700;
-          letter-spacing: 0.08em;
-          text-transform: uppercase;
-          text-decoration: none;
+        .nsp-compare-btn {
+          display: block; text-align: center; padding: 14px 20px; border-radius: 8px;
+          font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 700;
+          letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none;
           transition: opacity 0.18s, transform 0.18s;
-          margin-top: auto;
-          padding-top: 14px;
         }
-        .nsp-price-btn-dark { background: #1a2744; color: #ffffff; }
-        .nsp-price-btn-gold { background: #c9a84c; color: #1a2744; }
-        .nsp-price-btn-outline { background: transparent; color: #1a2744; border: 2px solid #e5e7eb; }
-        .nsp-price-btn:hover { opacity: 0.85; transform: translateY(-1px); }
+        .nsp-compare-btn:hover { opacity: 0.85; transform: translateY(-1px); }
+        .nsp-compare-btn-outline { background: transparent; color: #1a2744; border: 2px solid #e5e7eb; }
+        .nsp-compare-btn-gold { background: #c9a84c; color: #1a2744; border: none; }
+        .nsp-compare-btn-dark { background: #1a2744; color: #ffffff; border: none; }
 
         /* ── FINAL CTA ── */
         .nsp-final {
-          background: #1a2744;
-          padding: 100px 24px;
-          text-align: center;
-          position: relative;
-          overflow: hidden;
+          background: #1a2744; padding: 100px 24px; text-align: center;
+          position: relative; overflow: hidden;
         }
         .nsp-final::before {
-          content: '';
-          position: absolute;
-          inset: 0;
+          content: ''; position: absolute; inset: 0;
           background: radial-gradient(ellipse at 50% 60%, rgba(201,168,76,0.08) 0%, transparent 65%);
           pointer-events: none;
         }
         .nsp-final-h2 {
           font-family: 'Playfair Display', Georgia, serif;
-          font-size: clamp(2rem, 4vw, 3rem);
-          font-weight: 700;
-          color: #ffffff;
-          line-height: 1.22;
-          max-width: 640px;
-          margin: 0 auto 18px;
-          position: relative;
-          z-index: 1;
+          font-size: clamp(2rem, 4vw, 3rem); font-weight: 700;
+          color: #ffffff; line-height: 1.22; max-width: 640px; margin: 0 auto 18px;
+          position: relative; z-index: 1;
         }
         .nsp-final-sub {
-          font-family: 'Inter', sans-serif;
-          font-size: 1rem;
-          color: rgba(255,255,255,0.62);
-          max-width: 460px;
-          margin: 0 auto 48px;
-          line-height: 1.75;
-          font-weight: 300;
-          position: relative;
-          z-index: 1;
+          font-family: 'Inter', sans-serif; font-size: 1rem;
+          color: rgba(255,255,255,0.62); max-width: 460px; margin: 0 auto 48px;
+          line-height: 1.75; font-weight: 300; position: relative; z-index: 1;
         }
         .nsp-trust-badges {
-          display: flex;
-          justify-content: center;
-          gap: 32px;
-          flex-wrap: wrap;
-          margin-top: 56px;
-          position: relative;
-          z-index: 1;
+          display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;
+          margin-top: 56px; position: relative; z-index: 1;
         }
-        .nsp-trust-badge {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 6px;
-        }
-        .nsp-trust-icon {
-          font-size: 1.4rem;
-        }
+        .nsp-trust-badge { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+        .nsp-trust-icon { font-size: 1.4rem; }
         .nsp-trust-label {
-          font-family: 'Inter', sans-serif;
-          font-size: 0.75rem;
-          color: rgba(255,255,255,0.5);
-          font-weight: 400;
-          letter-spacing: 0.04em;
+          font-family: 'Inter', sans-serif; font-size: 0.75rem;
+          color: rgba(255,255,255,0.5); font-weight: 400; letter-spacing: 0.04em;
         }
 
         /* ── FOOTER ── */
         .nsp-footer {
-          background: #0d1628;
-          padding: 48px 24px;
-          text-align: center;
+          background: #0d1628; padding: 48px 24px; text-align: center;
           border-top: 1px solid rgba(255,255,255,0.06);
         }
 
@@ -696,18 +508,18 @@ function LandingPage() {
           .nsp-hero-inner { grid-template-columns: 1fr; }
           .nsp-hero-phone-wrap { display: none; }
           .nsp-ba-grid { grid-template-columns: 1fr; }
+          .nsp-diff-cols { grid-template-columns: 1fr; }
           .nsp-who-grid { grid-template-columns: repeat(2, 1fr); }
           .nsp-demos-grid { grid-template-columns: repeat(2, 1fr); }
           .nsp-steps { grid-template-columns: repeat(2, 1fr); }
           .nsp-step-connector { display: none; }
-          .nsp-pricing-grid { grid-template-columns: 1fr; max-width: 480px; }
-          .nsp-price-card-pro { transform: none; }
         }
-        @media (max-width: 540px) {
+        @media (max-width: 640px) {
           .nsp-who-grid { grid-template-columns: repeat(2, 1fr); }
-          .nsp-demos-grid { grid-template-columns: 1fr; max-width: 240px; }
+          .nsp-demos-grid { grid-template-columns: 1fr; max-width: 240px; margin-left: auto; margin-right: auto; }
           .nsp-steps { grid-template-columns: 1fr; }
           .nsp-trust-badges { gap: 20px; }
+          .nsp-diff-checks { gap: 12px; }
         }
       `;
       document.head.appendChild(style);
@@ -717,6 +529,15 @@ function LandingPage() {
   const scroll = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
+
+  const COMP_ROWS = [
+    ["Monthly payments forever",    "One-time investment"],
+    ["Generic templates",           "Customized for your business"],
+    ["Link organization",           "Business organization"],
+    ["Self-service setup",          "Done-for-you implementation"],
+    ["Basic profiles",              "Strategic Launch Point"],
+    ["Platform dependent",          "Built around your business"],
+  ];
 
   return (
     <div>
@@ -743,16 +564,16 @@ function LandingPage() {
               Your audience is ready.<br />
               Give them one place to go.
             </h1>
-            <p className="nsp-hero-sub">
-              A Launch Point is a single destination that organizes your business, simplifies the customer journey, and directs every visitor toward the one next action that actually moves them forward.
+            <p className="nsp-hero-explain">
+              A Launch Point is your single professional destination — the one place you send everyone. Instead of scattering visitors across Instagram, Calendly, your website, and payment links, your Launch Point organizes everything and guides every visitor toward one clear next step.
             </p>
             <div className="nsp-hero-btns">
               <button className="nsp-btn-gold" onClick={() => scroll("pricing")}>
                 See Pricing
               </button>
-              <button className="nsp-btn-ghost" onClick={() => scroll("demos")}>
-                View live demos →
-              </button>
+              <a href="mailto:hello@nextstepspro.com?subject=Get Started — Starter Package" className="nsp-btn-ghost">
+                Get Started — $497 →
+              </a>
             </div>
           </div>
           <div className="nsp-hero-phone-wrap">
@@ -786,7 +607,6 @@ function LandingPage() {
               ))}
             </div>
             <div className="nsp-ba-after">
-              <div className="nsp-ba-after-glow" />
               <div className="nsp-ba-label" style={{ color: C.gold }}>With Your Launch Point</div>
               {[
                 "One destination that organizes your entire presence",
@@ -796,6 +616,72 @@ function LandingPage() {
               ].map(item => (
                 <div key={item} className="nsp-ba-item" style={{ color: "rgba(255,255,255,0.88)" }}>
                   <span style={{ color: C.gold, fontSize: "1.1rem", flexShrink: 0, marginTop: 1 }}>✓</span>
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── WHY DIFFERENT ── */}
+      <section className="nsp-diff" id="why">
+        <div className="nsp-inner">
+          <div className="nsp-eyebrow">Why NextStepsPro Is Different</div>
+          <h2 className="nsp-section-title">You're Not Renting Another Tool.<br />You're Building a Business Asset.</h2>
+          <div className="nsp-diff-cols">
+
+            <div className="nsp-diff-left">
+              <div className="nsp-diff-left-h">Most Platforms Rent You A Page.</div>
+              <p className="nsp-diff-left-p">
+                Link-in-bio tools and subscription platforms charge monthly fees to access features you never truly own. NextStepsPro builds a customized Launch Point for your business designed around your goals, your brand, and your next step strategy.
+              </p>
+              {[
+                "One payment.",
+                "No monthly subscription.",
+                "No ongoing platform fees.",
+                "Your business.",
+                "Your asset.",
+              ].map(pt => (
+                <div key={pt} className="nsp-diff-point">{pt}</div>
+              ))}
+            </div>
+
+            <div className="nsp-diff-right">
+              <table className="nsp-diff-table">
+                <thead>
+                  <tr>
+                    <th>Subscription Platforms</th>
+                    <th>NextStepsPro</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {COMP_ROWS.map(([before, after]) => (
+                    <tr key={before}>
+                      <td>{before}</td>
+                      <td>{after}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+
+          <div className="nsp-diff-banner">
+            <div className="nsp-diff-banner-h">
+              "Linktree Helps You Organize Links. We Help You Organize Your Business."
+            </div>
+            <div className="nsp-diff-checks">
+              {[
+                "One-Time Investment",
+                "Done For You",
+                "Customized For Your Brand",
+                "Designed Around Action",
+                "No Monthly Subscription",
+              ].map(item => (
+                <div key={item} className="nsp-diff-check">
+                  <span className="nsp-diff-check-icon">✓</span>
                   {item}
                 </div>
               ))}
@@ -829,17 +715,29 @@ function LandingPage() {
         </div>
       </section>
 
+      {/* ── WHAT IS A LAUNCH POINT ── */}
+      <section className="nsp-what" id="what">
+        <div className="nsp-inner" style={{ position: "relative", zIndex: 1 }}>
+          <div className="nsp-eyebrow" style={{ color: C.gold }}>What Is A Launch Point</div>
+          <h2 className="nsp-section-title nsp-section-title-white" style={{ maxWidth: 700, margin: "0 auto 20px", textAlign: "center" }}>
+            One Destination. Every Visitor. One Next Step.
+          </h2>
+          <p className="nsp-what-body">
+            Most businesses send visitors to a website, a social profile, a booking page, and a payment link that were never designed to work together. A Launch Point is the destination that connects everything. It tells visitors who you are, what you offer, and exactly what to do next — in one place, every time.
+          </p>
+        </div>
+      </section>
+
       {/* ── LIVE DEMOS ── */}
       <section className="nsp-demos" id="demos">
         <div className="nsp-inner">
           <div className="nsp-eyebrow" style={{ color: C.gold }}>Live Examples</div>
           <h2 className="nsp-section-title nsp-section-title-white">See what a Launch Point looks like.</h2>
-          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "1rem", color: "rgba(255,255,255,0.55)", fontWeight: 300, lineHeight: 1.75, maxWidth: 520, marginBottom: 0 }}>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "1rem", color: "rgba(255,255,255,0.55)", fontWeight: 300, lineHeight: 1.75, maxWidth: 520 }}>
             Every Hub is built around one client's specific audience and one next step. Here are four examples across different industries.
           </p>
           <div className="nsp-demos-grid">
 
-            {/* Coach */}
             <div className="nsp-demo-card">
               <PhoneMockup dark>
                 <div className="dp-header">
@@ -852,13 +750,12 @@ function LandingPage() {
                   <div className="dp-btn-light">View Programs</div>
                   <div className="dp-btn-light">Free Resource</div>
                   <div className="dp-divider" />
-                  <div className="dp-text">"Helping ambitious people stop drifting and start building."</div>
+                  <div className="dp-text">Helping ambitious people stop drifting and start building.</div>
                 </div>
               </PhoneMockup>
               <div className="nsp-demo-label">Life Coach</div>
             </div>
 
-            {/* Realtor */}
             <div className="nsp-demo-card">
               <PhoneMockup dark>
                 <div className="dp-header">
@@ -880,7 +777,6 @@ function LandingPage() {
               <div className="nsp-demo-label">Realtor</div>
             </div>
 
-            {/* Speaker */}
             <div className="nsp-demo-card">
               <PhoneMockup dark>
                 <div className="dp-header">
@@ -899,7 +795,6 @@ function LandingPage() {
               <div className="nsp-demo-label">Speaker</div>
             </div>
 
-            {/* Consultant */}
             <div className="nsp-demo-card">
               <PhoneMockup dark>
                 <div className="dp-header">
@@ -935,7 +830,7 @@ function LandingPage() {
               { n: "01", title: "Discovery Call", desc: "We spend 30 minutes understanding your audience, your offer, and the one next step you want visitors to take." },
               { n: "02", title: "Strategy & Design", desc: "We map your visitor journey and design a Hub that directs attention where it matters most." },
               { n: "03", title: "Build & Integrate", desc: "We build your Launch Point with all integrations — Calendly, Stripe, email capture — wired up and tested." },
-              { n: "04", title: "Launch", desc: "You review, we refine, and your Hub goes live. Starter builds in 3 days. Pro builds in 7 to 14." },
+              { n: "04", title: "Launch", desc: "You review, we refine, and your Hub goes live. Starter builds in 3 days. Growth builds in 7 to 14." },
             ].map(({ n, title, desc }, i) => (
               <div key={n} className="nsp-step">
                 <div className="nsp-step-num">{n}</div>
@@ -952,83 +847,63 @@ function LandingPage() {
       <section className="nsp-pricing" id="pricing">
         <div className="nsp-inner">
           <div className="nsp-eyebrow">Investment</div>
-          <h2 className="nsp-section-title">Simple pricing. No surprises.</h2>
+          <h2 className="nsp-section-title">Packages For Every Stage.</h2>
           <p className="nsp-section-sub">
-            Every tier includes a complete Launch Point built to your brand and ready to convert from day one.
+            See exactly what's included in each package.
           </p>
-          <div className="nsp-pricing-grid">
-
-            <div className="nsp-price-card">
-              <div className="nsp-price-tier">Starter</div>
-              <div className="nsp-price-amount">$497</div>
-              <div className="nsp-price-note">One-time. No monthly fees.</div>
-              <div className="nsp-price-divider" />
-              {[
-                "One-page Launch Point",
-                "Custom branding & colors",
-                "Primary + secondary CTA",
-                "Social media links",
-                "Contact section",
-                "Lead capture form",
-                "Delivered in 3 business days",
-              ].map(f => (
-                <div key={f} className="nsp-price-feature">
-                  <div className="nsp-price-dot" />
-                  {f}
-                </div>
-              ))}
-              <a href="mailto:hello@nextstepspro.com" className="nsp-price-btn nsp-price-btn-outline" style={{ marginTop: 28 }}>
-                Get Started
+          <div className="nsp-compare-wrap">
+            <table className="nsp-compare-table">
+              <thead>
+                <tr>
+                  <th style={{ textAlign: "left" }}>Feature</th>
+                  <th>
+                    Starter
+                    <span className="nsp-compare-badge" style={{ opacity: 0 }}>placeholder</span>
+                    <span className="th-price">$497</span>
+                  </th>
+                  <th className="th-pro">
+                    Pro
+                    <span className="nsp-compare-badge">Most Popular</span>
+                    <span className="th-price">$997</span>
+                  </th>
+                  <th>
+                    Growth
+                    <span className="nsp-compare-badge" style={{ opacity: 0 }}>placeholder</span>
+                    <span className="th-price">$1,500</span>
+                  </th>
+                  <th>
+                    Custom
+                    <span className="nsp-compare-badge" style={{ opacity: 0 }}>placeholder</span>
+                    <span className="th-price">$3,000+</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {PRICING_FEATURES.map(({ label, s, p, g, c }) => (
+                  <tr key={label}>
+                    <td>{label}</td>
+                    <td>{s ? <span className="nsp-check">✓</span> : <span className="nsp-dash">—</span>}</td>
+                    <td className="td-pro">{p ? <span className="nsp-check">✓</span> : <span className="nsp-dash">—</span>}</td>
+                    <td>{g ? <span className="nsp-check">✓</span> : <span className="nsp-dash">—</span>}</td>
+                    <td>{c ? <span className="nsp-check">✓</span> : <span className="nsp-dash">—</span>}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <div className="nsp-compare-btns">
+              <a href="mailto:hello@nextstepspro.com?subject=Starter Package" className="nsp-compare-btn nsp-compare-btn-outline">
+                Get Starter
+              </a>
+              <a href="mailto:hello@nextstepspro.com?subject=Pro Package" className="nsp-compare-btn nsp-compare-btn-gold">
+                Get Pro
+              </a>
+              <a href="mailto:hello@nextstepspro.com?subject=Growth Package" className="nsp-compare-btn nsp-compare-btn-dark">
+                Get Growth
+              </a>
+              <a href="mailto:hello@nextstepspro.com?subject=Custom Package" className="nsp-compare-btn nsp-compare-btn-outline">
+                Let's Talk
               </a>
             </div>
-
-            <div className="nsp-price-card nsp-price-card-pro">
-              <div className="nsp-price-badge">Most Popular</div>
-              <div className="nsp-price-tier">Pro</div>
-              <div className="nsp-price-amount">$1,500</div>
-              <div className="nsp-price-note">One-time. Includes all integrations.</div>
-              <div className="nsp-price-divider" />
-              {[
-                "Advanced multi-section design",
-                "Calendly booking integration",
-                "Stripe payment integration",
-                "Email capture + CRM connection",
-                "Analytics & tracking setup",
-                "Mobile optimized",
-                "Delivered in 7 to 14 business days",
-              ].map(f => (
-                <div key={f} className="nsp-price-feature">
-                  <div className="nsp-price-dot" />
-                  {f}
-                </div>
-              ))}
-              <a href="mailto:hello@nextstepspro.com" className="nsp-price-btn nsp-price-btn-gold" style={{ marginTop: 28 }}>
-                Get Started
-              </a>
-            </div>
-
-            <div className="nsp-price-card">
-              <div className="nsp-price-tier">Custom</div>
-              <div className="nsp-price-amount" style={{ fontSize: "1.7rem" }}>Let's Talk</div>
-              <div className="nsp-price-note">Scope defined with you. White-glove delivery.</div>
-              <div className="nsp-price-divider" />
-              {[
-                "Fully bespoke design",
-                "Multi-page architecture available",
-                "Custom functionality & integrations",
-                "Ongoing support packages",
-                "Priority turnaround available",
-              ].map(f => (
-                <div key={f} className="nsp-price-feature">
-                  <div className="nsp-price-dot" />
-                  {f}
-                </div>
-              ))}
-              <a href="mailto:hello@nextstepspro.com" className="nsp-price-btn nsp-price-btn-outline" style={{ marginTop: 28 }}>
-                Start the Conversation
-              </a>
-            </div>
-
           </div>
         </div>
       </section>
