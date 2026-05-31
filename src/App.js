@@ -96,24 +96,82 @@ function HeroPhone() {
 function LaunchPadDiagram() {
   const cx = 260, cy = 252;
   const ringR = 168;
-  const nodeR = 38;
-  const centerR = 50;
-
-  const platforms = [
-    { name: "Instagram", fill: "#E1306C", deg: -90  },
-    { name: "YouTube",   fill: "#FF0000", deg: -45  },
-    { name: "LinkedIn",  fill: "#0077B5", deg: 0    },
-    { name: "Stripe",    fill: "#635BFF", deg: 45   },
-    { name: "Calendly",  fill: "#006BFF", deg: 90   },
-    { name: "Website",   fill: "#1a2744", deg: 135  },
-    { name: "Facebook",  fill: "#1877F2", deg: 180  },
-    { name: "TikTok",    fill: "#010101", deg: 225  },
-  ];
+  const nodeR = 42;
+  const centerR = 58;
 
   const pt = (deg) => ({
     x: cx + ringR * Math.cos((deg * Math.PI) / 180),
     y: cy + ringR * Math.sin((deg * Math.PI) / 180),
   });
+
+  const platforms = [
+    { name: "Instagram", fill: "url(#inst-grad)", deg: -90 },
+    { name: "YouTube",   fill: "#FF0000",          deg: -45 },
+    { name: "LinkedIn",  fill: "#0077B5",           deg: 0   },
+    { name: "Stripe",    fill: "#635BFF",           deg: 45  },
+    { name: "Calendly",  fill: "#006BFF",           deg: 90  },
+    { name: "Website",   fill: "#1a2744",           deg: 135 },
+    { name: "Facebook",  fill: "#1877F2",           deg: 180 },
+    { name: "TikTok",    fill: "#010101",           deg: 225 },
+  ];
+
+  const renderIcon = (name) => {
+    switch (name) {
+      case "Instagram": return (
+        <g>
+          <rect x="-9" y="-6.5" width="18" height="14" rx="3" stroke="white" fill="none" strokeWidth="1.6"/>
+          <circle cx="0" cy="0.5" r="4.8" stroke="white" fill="none" strokeWidth="1.5"/>
+          <path d="M-3,-9.5 H3 Q4,-9.5 4,-8.5 V-6.5 H-4 V-8.5 Q-4,-9.5 -3,-9.5 Z" fill="white"/>
+          <circle cx="7" cy="-4.5" r="1.3" fill="white"/>
+        </g>
+      );
+      case "YouTube": return (
+        <polygon points="-8,-10 -8,10 11,0" fill="white"/>
+      );
+      case "LinkedIn": return (
+        <text textAnchor="middle" dominantBaseline="central" x="0" y="0"
+          fontFamily="Arial,sans-serif" fontSize="18" fontWeight="900" fill="white">in</text>
+      );
+      case "Stripe": return (
+        <text textAnchor="middle" dominantBaseline="central" x="0" y="0"
+          fontFamily="Arial,sans-serif" fontSize="22" fontWeight="900" fill="white">S</text>
+      );
+      case "Calendly": return (
+        <g>
+          <rect x="-9" y="-7" width="18" height="16" rx="2.5" stroke="white" strokeWidth="1.5" fill="none"/>
+          <line x1="-9" y1="-1.5" x2="9" y2="-1.5" stroke="white" strokeWidth="1.2"/>
+          <line x1="-5" y1="-9.5" x2="-5" y2="-5" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+          <line x1="5" y1="-9.5" x2="5" y2="-5" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+          <circle cx="-4" cy="3" r="1.2" fill="white"/>
+          <circle cx="0" cy="3" r="1.2" fill="white"/>
+          <circle cx="4" cy="3" r="1.2" fill="white"/>
+          <circle cx="-4" cy="7" r="1.2" fill="white"/>
+          <circle cx="0" cy="7" r="1.2" fill="white"/>
+        </g>
+      );
+      case "Website": return (
+        <g>
+          <circle cx="0" cy="0" r="10" stroke="white" strokeWidth="1.5" fill="none"/>
+          <line x1="0" y1="-10" x2="0" y2="10" stroke="white" strokeWidth="1.2"/>
+          <line x1="-10" y1="0" x2="10" y2="0" stroke="white" strokeWidth="1.2"/>
+          <path d="M-9,-4.5 C-4,-7 4,-7 9,-4.5" stroke="white" strokeWidth="1.2" fill="none"/>
+          <path d="M-9,4.5 C-4,7 4,7 9,4.5" stroke="white" strokeWidth="1.2" fill="none"/>
+        </g>
+      );
+      case "Facebook": return (
+        <text textAnchor="middle" dominantBaseline="central" x="1" y="1"
+          fontFamily="Arial,sans-serif" fontSize="22" fontWeight="900" fill="white">f</text>
+      );
+      case "TikTok": return (
+        <g>
+          <ellipse cx="-1" cy="6" rx="4" ry="2.5" fill="white" transform="rotate(-20,-1,6)"/>
+          <line x1="3" y1="5" x2="3" y2="-8" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+          <path d="M3,-8 C6,-10 9,-7 7,-4" stroke="white" strokeWidth="1.8" fill="none" strokeLinecap="round"/>
+        </g>
+      );
+      default: return null;
+    }
+  };
 
   return (
     <svg viewBox="0 0 520 516" style={{ width: "100%", maxWidth: 500, height: "auto", display: "block", margin: "0 auto" }}>
@@ -122,30 +180,23 @@ function LaunchPadDiagram() {
           <stop offset="0%" stopColor="#c9a84c" stopOpacity="0.11"/>
           <stop offset="100%" stopColor="#c9a84c" stopOpacity="0"/>
         </radialGradient>
-        <clipPath id="lpd-logo-clip">
-          <circle cx={cx} cy={cy} r={centerR - 2}/>
-        </clipPath>
+        <linearGradient id="inst-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#E1306C"/>
+          <stop offset="100%" stopColor="#F77737"/>
+        </linearGradient>
         <clipPath id="centerClip">
           <circle cx={cx} cy={cy} r={centerR - 1}/>
         </clipPath>
       </defs>
 
-      {/* Subtle orbit ring */}
       <circle cx={cx} cy={cy} r={ringR} fill="none" stroke="rgba(26,39,68,0.07)" strokeWidth="1" strokeDasharray="3 8"/>
-
-      {/* Center glow */}
       <circle cx={cx} cy={cy} r={94} fill="url(#lpd-glow)"/>
 
-      {/* Connecting lines */}
       {platforms.map((pl, i) => {
         const { x, y } = pt(pl.deg);
-        return (
-          <line key={`l${i}`} x1={x} y1={y} x2={cx} y2={cy}
-            stroke="rgba(201,168,76,0.28)" strokeWidth="1"/>
-        );
+        return <line key={`l${i}`} x1={x} y1={y} x2={cx} y2={cy} stroke="rgba(201,168,76,0.28)" strokeWidth="1"/>;
       })}
 
-      {/* Animated pulse dots traveling toward center */}
       {platforms.map((pl, i) => {
         const { x, y } = pt(pl.deg);
         const dur = 2.6 + (i % 4) * 0.45;
@@ -162,36 +213,25 @@ function LaunchPadDiagram() {
         );
       })}
 
-      {/* Platform nodes */}
       {platforms.map((pl, i) => {
         const { x, y } = pt(pl.deg);
         return (
           <g key={`n${i}`}>
             <circle cx={x} cy={y} r={nodeR} fill={pl.fill} stroke="rgba(255,255,255,0.82)" strokeWidth="2"/>
-            <text x={x} y={y} textAnchor="middle" dominantBaseline="central"
-              fontFamily="Inter, sans-serif" fontSize="9" fontWeight="700"
-              fill="#ffffff" letterSpacing="0.06em">
-              {pl.name.toUpperCase()}
-            </text>
-            <text x={x} y={y + nodeR + 14} textAnchor="middle"
-              fontFamily="Inter, sans-serif" fontSize="8" fontWeight="500"
-              fill="#1a2744" letterSpacing="0.08em">
+            <g transform={`translate(${x},${y})`}>{renderIcon(pl.name)}</g>
+            <text x={x} y={y + nodeR + 13} textAnchor="middle"
+              fontFamily="Inter, sans-serif" fontSize="8" fontWeight="600"
+              fill="#1a2744" letterSpacing="0.12em">
               {pl.name.toUpperCase()}
             </text>
           </g>
         );
       })}
 
-      {/* Center: main navy circle */}
       <circle cx={cx} cy={cy} r={centerR} fill="#1a2744"/>
-
-      {/* Center: gold border */}
-      <circle cx={cx} cy={cy} r={centerR}
-        fill="none" stroke="#c9a84c" strokeWidth="1.5" opacity="0.82"/>
-
-      {/* Center: logo */}
+      <circle cx={cx} cy={cy} r={centerR} fill="none" stroke="#c9a84c" strokeWidth="1.5" opacity="0.82"/>
       <image href="/nextstepspro-logo.png"
-        x={cx - 50} y={cy - 25} width="100" height="50"
+        x={cx - 45} y={cy - 22} width="90" height="45"
         clipPath="url(#centerClip)"
         preserveAspectRatio="xMidYMid meet"/>
     </svg>
@@ -1016,7 +1056,7 @@ function LandingPage() {
             <div className="nsp-demo-card">
               <PhoneMockup dark>
                 <div className="dp-header">
-                  <div className="dp-avatar" style={{ background: "#4a7c59" }}>SR</div>
+                  <div className="dp-avatar" style={{ background: "#2d7a4f" }}>SR</div>
                   <div className="dp-name">Sarah Rivera</div>
                   <div className="dp-role">Real Estate</div>
                 </div>
@@ -1034,7 +1074,7 @@ function LandingPage() {
             <div className="nsp-demo-card">
               <PhoneMockup dark>
                 <div className="dp-header">
-                  <div className="dp-avatar" style={{ background: "#7c3aed" }}>MJ</div>
+                  <div className="dp-avatar" style={{ background: "#6b4c9a" }}>MJ</div>
                   <div className="dp-name">Marcus Johnson</div>
                   <div className="dp-role">Keynote Speaker</div>
                 </div>
@@ -1052,7 +1092,7 @@ function LandingPage() {
             <div className="nsp-demo-card">
               <PhoneMockup dark>
                 <div className="dp-header">
-                  <div className="dp-avatar" style={{ background: "#7c5c2e" }}>DK</div>
+                  <div className="dp-avatar" style={{ background: "#1a2744" }}>DK</div>
                   <div className="dp-name">Pastor David King</div>
                   <div className="dp-role">Faith Community</div>
                 </div>
