@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CoachHub from "./CoachHub";
 import Realtor from "./pages/Realtor";
+import PremiumMockups from "./components/PremiumMockups";
 
 const C = {
   bg:     "#FAFAF8",
@@ -118,7 +119,7 @@ function LaunchPadDiagram() {
   const renderIcon = (name) => {
     switch (name) {
       case "Instagram": return (
-        <g>
+        <g transform="scale(1.4)">
           <rect x="-9" y="-6.5" width="18" height="14" rx="3" stroke="white" fill="none" strokeWidth="1.6"/>
           <circle cx="0" cy="0.5" r="4.8" stroke="white" fill="none" strokeWidth="1.5"/>
           <path d="M-3,-9.5 H3 Q4,-9.5 4,-8.5 V-6.5 H-4 V-8.5 Q-4,-9.5 -3,-9.5 Z" fill="white"/>
@@ -126,31 +127,33 @@ function LaunchPadDiagram() {
         </g>
       );
       case "YouTube": return (
-        <polygon points="-8,-10 -8,10 11,0" fill="white"/>
+        <g transform="scale(1.4)">
+          <polygon points="-8,-10 -8,10 11,0" fill="white"/>
+        </g>
       );
       case "LinkedIn": return (
         <text textAnchor="middle" dominantBaseline="central" x="0" y="0"
-          fontFamily="Arial,sans-serif" fontSize="14" fontWeight="900" fill="white">in</text>
+          fontFamily="Arial,sans-serif" fontSize="20" fontWeight="900" fill="white">in</text>
       );
       case "Stripe": return (
         <text textAnchor="middle" dominantBaseline="central" x="0" y="0"
-          fontFamily="Arial,sans-serif" fontSize="14" fontWeight="900" fill="white">S</text>
+          fontFamily="Arial,sans-serif" fontSize="20" fontWeight="900" fill="white">S</text>
       );
       case "Calendly": return (
         <text textAnchor="middle" dominantBaseline="central" x="0" y="0"
-          fontFamily="Arial,sans-serif" fontSize="18" fill="white">▦</text>
+          fontFamily="Arial,sans-serif" fontSize="25" fill="white">▦</text>
       );
       case "Website": return (
         <text textAnchor="middle" dominantBaseline="central" x="0" y="0"
-          fontFamily="Arial,sans-serif" fontSize="20" fill="white">⊕</text>
+          fontFamily="Arial,sans-serif" fontSize="28" fill="white">⊕</text>
       );
       case "Facebook": return (
         <text textAnchor="middle" dominantBaseline="central" x="1" y="1"
-          fontFamily="Arial,sans-serif" fontSize="16" fontWeight="900" fill="white">f</text>
+          fontFamily="Arial,sans-serif" fontSize="22" fontWeight="900" fill="white">f</text>
       );
       case "TikTok": return (
         <text textAnchor="middle" dominantBaseline="central" x="0" y="0"
-          fontFamily="Arial,sans-serif" fontSize="18" fill="white">♪</text>
+          fontFamily="Arial,sans-serif" fontSize="25" fill="white">♪</text>
       );
       default: return null;
     }
@@ -211,7 +214,7 @@ function LaunchPadDiagram() {
         );
       })}
 
-      <circle cx={cx} cy={cy} r={centerR} fill="#1a2744"/>
+      <circle cx={cx} cy={cy} r={centerR} fill="transparent"/>
       <circle cx={cx} cy={cy} r={centerR} fill="none" stroke="#c9a84c" strokeWidth="1.5" opacity="0.82"/>
       <image href="/nextstepspro-logo.png"
         x={cx - 45} y={cy - 22} width="90" height="45"
@@ -1009,94 +1012,7 @@ function LandingPage() {
       </section>
 
       {/* ── LIVE DEMOS ── */}
-      <section className="nsp-demos" id="demos">
-        <div className="nsp-inner">
-          <div className="nsp-eyebrow" style={{ color: C.gold }}>Live Examples</div>
-          <h2 className="nsp-section-title nsp-section-title-white">See what a LaunchPad looks like.</h2>
-          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "1rem", color: "rgba(255,255,255,0.55)", fontWeight: 300, lineHeight: 1.75, maxWidth: 520 }}>
-            Every LaunchPad is built around one client's specific audience and one next step. Here are four examples across different industries.
-          </p>
-          <div className="nsp-demos-grid">
-
-            <div className="nsp-demo-card">
-              <PhoneMockup dark>
-                <div className="dp-header">
-                  <div className="dp-avatar">AC</div>
-                  <div className="dp-name">Alex Carter</div>
-                  <div className="dp-role">Life Coach</div>
-                </div>
-                <div className="dp-body">
-                  <div className="dp-btn-gold">Book a Discovery Call</div>
-                  <div className="dp-btn-light">View Programs</div>
-                  <div className="dp-btn-light">Free Resource</div>
-                  <div className="dp-divider" />
-                  <div className="dp-text">Clarity for driven professionals.</div>
-                </div>
-              </PhoneMockup>
-              <div className="nsp-demo-label">Life Coach</div>
-            </div>
-
-            <div className="nsp-demo-card">
-              <PhoneMockup dark>
-                <div className="dp-header">
-                  <div className="dp-avatar" style={{ background: "#2d7a4f" }}>SR</div>
-                  <div className="dp-name">Sarah Rivera</div>
-                  <div className="dp-role">Real Estate</div>
-                </div>
-                <div className="dp-body">
-                  <div className="dp-btn-gold">Get a Free Home Valuation</div>
-                  <div className="dp-btn-light">View Listings</div>
-                  <div className="dp-btn-light">First-Time Buyer Guide</div>
-                  <div className="dp-divider" />
-                  <div className="dp-text">Your next home starts here.</div>
-                </div>
-              </PhoneMockup>
-              <div className="nsp-demo-label">Realtor</div>
-            </div>
-
-            <div className="nsp-demo-card">
-              <PhoneMockup dark>
-                <div className="dp-header">
-                  <div className="dp-avatar" style={{ background: "#6b4c9a" }}>MJ</div>
-                  <div className="dp-name">Marcus Johnson</div>
-                  <div className="dp-role">Keynote Speaker</div>
-                </div>
-                <div className="dp-body">
-                  <div className="dp-btn-gold">Book Marcus to Speak</div>
-                  <div className="dp-btn-light">Watch a Keynote</div>
-                  <div className="dp-btn-light">Get the Book</div>
-                  <div className="dp-divider" />
-                  <div className="dp-text">300+ stages. 40+ countries.</div>
-                </div>
-              </PhoneMockup>
-              <div className="nsp-demo-label">Speaker</div>
-            </div>
-
-            <div className="nsp-demo-card">
-              <PhoneMockup dark>
-                <div className="dp-header">
-                  <div className="dp-avatar" style={{ background: "#1a2744" }}>DK</div>
-                  <div className="dp-name">Pastor David King</div>
-                  <div className="dp-role">Faith Community</div>
-                </div>
-                <div className="dp-body">
-                  <div className="dp-btn-gold">Join Our Community</div>
-                  <div className="dp-btn-light">Watch This Week</div>
-                  <div className="dp-btn-light">Give Online</div>
-                  <div className="dp-divider" />
-                  <div className="dp-text">Everyone is welcome here.</div>
-                </div>
-              </PhoneMockup>
-              <div className="nsp-demo-label">Faith Community</div>
-            </div>
-
-          </div>
-          <div className="nsp-demo-links">
-            <a href="/coach" className="nsp-demo-link">View Coach LaunchPad Demo →</a>
-            <a href="/realtor" className="nsp-demo-link">View Realtor LaunchPad Demo →</a>
-          </div>
-        </div>
-      </section>
+      <PremiumMockups />
 
       {/* ── HOW IT WORKS ── */}
       <section className="nsp-how" id="how">
